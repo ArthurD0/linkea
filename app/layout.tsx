@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Linkea — Lance ta startup avec une équipe étudiante d'élite",
   description:
     "Linkea connecte développeurs, profils business et mentors pour construire des startups rapidement. De l'idée au MVP en quelques semaines.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

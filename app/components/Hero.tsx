@@ -4,65 +4,65 @@ const ARC = 2 * Math.PI * 36;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "linear-gradient(175deg, #f8faff 0%, #f0f5ff 40%, #fafbff 70%, #ffffff 100%)" }}>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white">
 
-      {/* Subtle top-left ambient */}
+      {/* Blue aurora — top left */}
       <div className="absolute pointer-events-none animate-aurora"
         style={{
           top: "-15%", left: "-10%",
           width: "800px", height: "800px",
           borderRadius: "50%",
-          background: "radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, rgba(59,130,246,0.03) 40%, transparent 65%)",
+          background: "radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, rgba(59,130,246,0.03) 40%, transparent 65%)",
           filter: "blur(80px)",
         }} />
 
-      {/* Subtle bottom-right ambient */}
+      {/* Pink aurora — bottom right */}
       <div className="absolute pointer-events-none animate-aurora-r"
         style={{
           bottom: "-20%", right: "-12%",
           width: "700px", height: "700px",
           borderRadius: "50%",
-          background: "radial-gradient(ellipse, rgba(124,58,237,0.06) 0%, rgba(129,140,248,0.02) 40%, transparent 65%)",
+          background: "radial-gradient(ellipse, rgba(236,72,153,0.07) 0%, rgba(244,114,182,0.03) 40%, transparent 65%)",
           filter: "blur(70px)",
         }} />
 
-      {/* Top-center spotlight — very subtle */}
+      {/* Top-center spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
         style={{
           width: "1200px", height: "700px",
-          background: "radial-gradient(ellipse 55% 70% at 50% -5%, rgba(37,99,235,0.09) 0%, rgba(99,102,241,0.03) 45%, transparent 65%)",
+          background: "radial-gradient(ellipse 55% 70% at 50% -5%, rgba(37,99,235,0.07) 0%, rgba(236,72,153,0.03) 45%, transparent 65%)",
         }} />
 
       {/* Subtle grid */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(15,23,42,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(15,23,42,0.03) 1px, transparent 1px)
+            linear-gradient(rgba(15,23,42,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15,23,42,0.025) 1px, transparent 1px)
           `,
           backgroundSize: "72px 72px",
-          maskImage: "radial-gradient(ellipse 75% 65% at 50% 40%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, transparent 80%)",
+          maskImage: "radial-gradient(ellipse 75% 65% at 50% 40%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 55%, transparent 80%)",
         }} />
 
-      {/* ══════════════════════════════════════════════════
-          CONTENT
-      ══════════════════════════════════════════════════ */}
-
+      {/* ── Content ── */}
       <div className="relative z-10 mx-auto max-w-6xl w-full px-6 pt-32 pb-24 flex flex-col items-center text-center">
 
         {/* Status badge */}
-        <div className="opacity-0-init animate-fade-up delay-100 inline-flex items-center gap-3 glass rounded-full px-5 py-2.5 mb-14">
+        <div className="opacity-0-init animate-fade-up delay-100 inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-14"
+          style={{
+            background: "#fdf4f8",
+            border: "1px solid rgba(236,72,153,0.2)",
+          }}>
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"/>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"/>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "#ec4899" }}/>
+            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#ec4899" }}/>
           </span>
-          <span className="text-slate-500 text-sm font-medium tracking-wide">Beta privée · Places limitées</span>
-          <span className="w-px h-3.5 bg-slate-200"/>
-          <span className="text-blue-500/60 text-[11px] font-bold uppercase tracking-[0.18em]">2026</span>
+          <span className="text-slate-600 text-sm font-medium tracking-wide">Beta privée · Places limitées</span>
+          <span className="w-px h-3.5 bg-pink-200"/>
+          <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#be185d" }}>2026</span>
         </div>
 
-        {/* ── Headline ── */}
+        {/* Headline */}
         <h1 className="opacity-0-init animate-fade-up delay-200 font-bold tracking-[-0.035em] leading-[0.96] mb-10 max-w-5xl">
           <span className="block text-[clamp(50px,8.5vw,104px)] text-slate-900">
             Lance ta startup
@@ -70,7 +70,7 @@ export default function Hero() {
           <span className="block text-[clamp(50px,8.5vw,104px)] text-gradient-vivid">
             avec une équipe
           </span>
-          <span className="block text-[clamp(34px,5.5vw,68px)] font-semibold mt-4 text-slate-300">
+          <span className="block text-[clamp(34px,5.5vw,68px)] font-semibold mt-4 text-slate-400">
             étudiante d&apos;élite
           </span>
         </h1>
@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* CTA buttons */}
         <div className="opacity-0-init animate-fade-up delay-400 flex flex-col sm:flex-row items-center gap-4 mb-20">
-          <a href="#whitelist" className="btn-primary inline-flex items-center gap-3 text-white font-semibold text-[15px] px-10 rounded-2xl"
+          <a href="#whitelist" className="btn-pink inline-flex items-center gap-3 text-white font-semibold text-[15px] px-10 rounded-2xl"
             style={{ paddingTop: "18px", paddingBottom: "18px" }}>
             Accéder à la beta privée
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
@@ -115,17 +115,17 @@ export default function Hero() {
               style={{ borderRight: i < 2 ? "1px solid rgba(15,23,42,0.06)" : "none" }}>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-3xl font-black text-slate-900 tracking-tight">{s.val}</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600/70">{s.unit}</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "#be185d" }}>{s.unit}</span>
               </div>
-              <p className="text-xs text-slate-400">{s.sub}</p>
+              <p className="text-xs text-slate-500">{s.sub}</p>
             </div>
           ))}
         </div>
 
-        {/* ── Dashboard mockup ── */}
+        {/* Dashboard mockup */}
         <div className="opacity-0-init animate-fade-up delay-700 w-full max-w-4xl relative">
 
-          {/* Glow pool beneath the mockup */}
+          {/* Glow beneath */}
           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-20 pointer-events-none"
             style={{
               background: "radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%)",
@@ -145,7 +145,7 @@ export default function Hero() {
 
             {/* Glowing top border */}
             <div className="h-[1.5px] w-full animate-border-glow"
-              style={{ background: "linear-gradient(90deg, transparent 2%, rgba(59,130,246,0.6) 25%, rgba(147,197,253,0.8) 50%, rgba(99,102,241,0.6) 75%, transparent 98%)" }}/>
+              style={{ background: "linear-gradient(90deg, transparent 2%, rgba(59,130,246,0.5) 25%, rgba(244,114,182,0.6) 50%, rgba(99,102,241,0.5) 75%, transparent 98%)" }}/>
 
             {/* Window chrome */}
             <div className="flex items-center gap-3 px-6 py-4"
@@ -165,8 +165,8 @@ export default function Hero() {
                 </div>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500/60 animate-pulse"/>
-                <span className="text-[11px] font-mono" style={{ color: "rgba(96,165,250,0.4)" }}>live</span>
+                <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "rgba(236,72,153,0.6)" }}/>
+                <span className="text-[11px] font-mono" style={{ color: "rgba(244,114,182,0.4)" }}>live</span>
               </div>
             </div>
 
@@ -182,7 +182,7 @@ export default function Hero() {
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center"
                     style={{
-                      background: "linear-gradient(135deg, rgba(37,99,235,0.35), rgba(99,102,241,0.2))",
+                      background: "linear-gradient(135deg, rgba(37,99,235,0.35), rgba(236,72,153,0.2))",
                       border: "1px solid rgba(59,130,246,0.25)",
                     }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(96,165,250,0.85)" strokeWidth="1.5">
@@ -213,7 +213,7 @@ export default function Hero() {
                   <defs>
                     <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%"   stopColor="#3b82f6"/>
-                      <stop offset="100%" stopColor="#818cf8"/>
+                      <stop offset="100%" stopColor="#ec4899"/>
                     </linearGradient>
                   </defs>
                   <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(59,130,246,0.12)" strokeWidth="4"/>
@@ -221,14 +221,14 @@ export default function Hero() {
                     strokeLinecap="round"
                     strokeDasharray={`${0.97 * ARC} ${ARC}`}
                     transform="rotate(-90 40 40)"
-                    style={{ filter: "drop-shadow(0 0 8px rgba(59,130,246,0.7))" }}/>
+                    style={{ filter: "drop-shadow(0 0 8px rgba(236,72,153,0.5))" }}/>
                   <text x="40" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="800" fontFamily="inherit">97%</text>
-                  <text x="40" y="50" textAnchor="middle" fill="rgba(147,197,253,0.4)" fontSize="8" fontFamily="inherit">match</text>
+                  <text x="40" y="50" textAnchor="middle" fill="rgba(244,114,182,0.4)" fontSize="8" fontFamily="inherit">match</text>
                 </svg>
                 <div className="flex items-center gap-1.5">
-                  <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-400/30"/>
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400/40"/>
-                  <div className="h-px w-8 bg-gradient-to-l from-transparent to-blue-400/30"/>
+                  <div className="h-px w-8 bg-gradient-to-r from-transparent to-pink-400/30"/>
+                  <div className="w-1.5 h-1.5 rounded-full bg-pink-400/40"/>
+                  <div className="h-px w-8 bg-gradient-to-l from-transparent to-pink-400/30"/>
                 </div>
               </div>
 
@@ -240,8 +240,8 @@ export default function Hero() {
 
                 {[
                   { role: "Full-Stack Dev",  school: "Polytechnique", c: "#2563eb" },
-                  { role: "Product Manager", school: "HEC Paris",      c: "#7c3aed" },
-                  { role: "Designer UX/UI",  school: "Sciences Po",    c: "#0891b2" },
+                  { role: "Product Manager", school: "HEC Paris",      c: "#ec4899" },
+                  { role: "Designer UX/UI",  school: "Sciences Po",    c: "#7c3aed" },
                 ].map(m => (
                   <div key={m.role} className="flex items-center gap-3 mb-3 last:mb-0">
                     <div className="w-8 h-8 rounded-xl shrink-0 flex items-center justify-center"
@@ -275,7 +275,59 @@ export default function Hero() {
                   </div>
                 ))}
               </div>
-              <span className="text-[11px] font-mono" style={{ color: "rgba(96,165,250,0.35)" }}>Démarrage · 48h</span>
+              <span className="text-[11px] font-mono" style={{ color: "rgba(244,114,182,0.35)" }}>Démarrage · 48h</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Schools trust marquee */}
+        <div className="opacity-0-init animate-fade-up delay-1000 mt-16 w-full max-w-4xl mx-auto">
+          <p className="text-slate-400 text-xs font-medium uppercase tracking-[0.2em] text-center mb-6">
+            Équipes issues des meilleures écoles
+          </p>
+          <div className="relative overflow-hidden">
+            {/* Fade masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
+              style={{ background: "linear-gradient(to right, white, transparent)" }}/>
+            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
+              style={{ background: "linear-gradient(to left, white, transparent)" }}/>
+
+            {/* Scrolling track */}
+            <div className="flex whitespace-nowrap" style={{ width: "max-content", animation: "marquee 22s linear infinite", willChange: "transform" }}>
+              {[
+                { name: "École Polytechnique",  style: { fontWeight: 700, letterSpacing: "-0.02em" } },
+                { name: "HEC Paris",             style: { fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase" as const } },
+                { name: "CentraleSupélec",       style: { fontWeight: 600, letterSpacing: "-0.01em" } },
+                { name: "ESSEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
+                { name: "Sciences Po",           style: { fontWeight: 500, fontStyle: "italic" } },
+                { name: "ESCP",                  style: { fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase" as const } },
+                { name: "Mines ParisTech",       style: { fontWeight: 600 } },
+                { name: "Télécom Paris",         style: { fontWeight: 700, letterSpacing: "-0.01em" } },
+                { name: "Arts et Métiers",       style: { fontWeight: 600 } },
+                { name: "EM Lyon",               style: { fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" as const } },
+                { name: "INSA Lyon",             style: { fontWeight: 700, letterSpacing: "0.04em" } },
+                { name: "EDHEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
+                /* duplicate for seamless loop */
+                { name: "École Polytechnique",  style: { fontWeight: 700, letterSpacing: "-0.02em" } },
+                { name: "HEC Paris",             style: { fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase" as const } },
+                { name: "CentraleSupélec",       style: { fontWeight: 600, letterSpacing: "-0.01em" } },
+                { name: "ESSEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
+                { name: "Sciences Po",           style: { fontWeight: 500, fontStyle: "italic" } },
+                { name: "ESCP",                  style: { fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase" as const } },
+                { name: "Mines ParisTech",       style: { fontWeight: 600 } },
+                { name: "Télécom Paris",         style: { fontWeight: 700, letterSpacing: "-0.01em" } },
+                { name: "Arts et Métiers",       style: { fontWeight: 600 } },
+                { name: "EM Lyon",               style: { fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" as const } },
+                { name: "INSA Lyon",             style: { fontWeight: 700, letterSpacing: "0.04em" } },
+                { name: "EDHEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
+              ].map((school, i) => (
+                <span key={i} className="inline-flex items-center mx-8 gap-8">
+                  <span className="text-slate-400 text-[15px]" style={school.style}>
+                    {school.name}
+                  </span>
+                  <span className="text-slate-200 text-lg">·</span>
+                </span>
+              ))}
             </div>
           </div>
         </div>

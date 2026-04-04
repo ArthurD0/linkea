@@ -43,43 +43,44 @@ export default function Whitelist() {
   }
 
   return (
-    <section id="whitelist" className="relative py-44 px-6 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #ffffff 0%, #f0f7ff 35%, #eef5ff 65%, #ffffff 100%)" }}>
+    <section id="whitelist" className="relative py-40 px-6 overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #f7f7f8 0%, #fdf4f8 40%, #fce7f3 70%, #fdf4f8 100%)" }}>
 
-      <div className="divider absolute top-0 left-0 right-0"/>
+      <div className="divider absolute top-0 left-0 right-0" style={{ background: "rgba(236,72,153,0.1)" }}/>
 
-      {/* Subtle central glow */}
+      {/* Pink central glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="absolute w-[800px] h-[500px] rounded-full"
           style={{
-            background: "radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, rgba(99,102,241,0.03) 45%, transparent 65%)",
+            background: "radial-gradient(ellipse, rgba(236,72,153,0.09) 0%, rgba(190,24,93,0.03) 45%, transparent 65%)",
             filter: "blur(80px)",
           }}/>
       </div>
 
-      {/* Subtle pulse rings */}
+      {/* Pulse rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {[200, 360, 540].map((sz, i) => (
           <div key={i} className="absolute rounded-full animate-pulse-ring"
             style={{
               width: `${sz}px`,
               height: `${sz}px`,
-              border: `1px solid rgba(37,99,235,${0.07 - i * 0.018})`,
+              border: `1px solid rgba(236,72,153,${0.08 - i * 0.02})`,
               animationDelay: `${i * 0.8}s`,
             }}/>
         ))}
       </div>
 
-      {/* ── Content ───────────────────────────────────────────── */}
+      {/* ── Content ── */}
       <div className="relative z-10 mx-auto max-w-lg text-center">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-3 glass rounded-full px-5 py-2.5 mb-14">
+        <div className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-14"
+          style={{ background: "rgba(255,255,255,0.7)", border: "1px solid rgba(236,72,153,0.2)", backdropFilter: "blur(12px)" }}>
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"/>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"/>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "#ec4899" }}/>
+            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#ec4899" }}/>
           </span>
-          <span className="text-slate-500 text-sm font-medium">Accès sur invitation · Beta privée</span>
+          <span className="text-slate-600 text-sm font-medium">Accès sur invitation · Beta privée</span>
         </div>
 
         {/* Headline */}
@@ -87,7 +88,7 @@ export default function Whitelist() {
           <span className="block text-[clamp(42px,7vw,80px)] text-slate-900">
             Rejoins les premiers
           </span>
-          <span className="block text-[clamp(42px,7vw,80px)] text-gradient">
+          <span className="block text-[clamp(42px,7vw,80px)] text-gradient-pink">
             membres de Linkea
           </span>
         </h2>
@@ -98,15 +99,16 @@ export default function Whitelist() {
         </p>
 
         {/* Scarcity meter */}
-        <div className="glass rounded-2xl px-6 py-5 mb-8 text-left">
+        <div className="rounded-2xl px-6 py-5 mb-8 text-left"
+          style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(236,72,153,0.15)", backdropFilter: "blur(12px)" }}>
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"/>
-              <span className="text-slate-500 text-sm font-medium">Places disponibles</span>
+              <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#ec4899" }}/>
+              <span className="text-slate-600 text-sm font-medium">Places disponibles</span>
             </div>
             <div className="flex items-baseline gap-1">
               <span className="text-slate-900 font-bold text-base">{TAKEN}</span>
-              <span className="text-slate-400 text-sm">/{TOTAL} pris</span>
+              <span className="text-slate-500 text-sm">/{TOTAL} pris</span>
             </div>
           </div>
 
@@ -115,12 +117,12 @@ export default function Whitelist() {
               className="h-full rounded-full"
               style={{
                 width: `${(TAKEN / TOTAL) * 100}%`,
-                background: "linear-gradient(90deg, #2563eb, #7c3aed)",
+                background: "linear-gradient(90deg, #be185d, #ec4899, #f472b6)",
                 transition: "width 1.2s cubic-bezier(0.16,1,0.3,1)",
               }}/>
           </div>
 
-          <p className="text-slate-400 text-xs mt-2.5 text-right font-medium">
+          <p className="text-slate-500 text-xs mt-2.5 text-right font-medium">
             {TOTAL - TAKEN} places restantes
           </p>
         </div>
@@ -132,8 +134,8 @@ export default function Whitelist() {
               <div className="relative flex items-center rounded-2xl overflow-hidden"
                 style={{
                   background: "#ffffff",
-                  border: "1px solid rgba(15,23,42,0.12)",
-                  boxShadow: "0 1px 3px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.05)",
+                  border: "1px solid rgba(236,72,153,0.2)",
+                  boxShadow: "0 1px 3px rgba(15,23,42,0.04), 0 4px 12px rgba(236,72,153,0.08)",
                 }}>
                 {/* Mail icon */}
                 <div className="pl-5 pr-2 text-slate-400">
@@ -168,7 +170,7 @@ export default function Whitelist() {
             {error && (
               <p className="text-red-500/80 text-xs mb-2">{error}</p>
             )}
-            <p className="text-slate-400 text-xs">
+            <p className="text-slate-500 text-xs">
               Accès limité aux premiers membres · Sélection sur dossier · Aucune carte requise
             </p>
           </form>
@@ -176,7 +178,7 @@ export default function Whitelist() {
         ) : (
           <div className="mb-8 rounded-2xl px-8 py-8 text-center"
             style={{
-              background: "linear-gradient(135deg, rgba(240,253,244,0.9), rgba(220,252,231,0.7))",
+              background: "rgba(255,255,255,0.9)",
               border: "1px solid rgba(34,197,94,0.2)",
             }}>
             <div className="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center"
@@ -186,12 +188,12 @@ export default function Whitelist() {
               </svg>
             </div>
             <p className="text-green-700 font-bold text-lg mb-2">Tu es sur la liste !</p>
-            <p className="text-green-600/70 text-sm">On te contacte dès que ton accès est disponible.</p>
+            <p className="text-green-700/70 text-sm">On te contacte dès que ton accès est disponible.</p>
           </div>
         )}
 
         {/* Trust row */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 text-sm">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-slate-500 text-sm">
           {[
             { icon: (
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -210,7 +212,7 @@ export default function Whitelist() {
               ), label: "Réponse sous 48h" },
           ].map((t) => (
             <div key={t.label} className="flex items-center gap-2">
-              <span className="text-blue-500/50">{t.icon}</span>
+              <span style={{ color: "#ec4899" }}>{t.icon}</span>
               {t.label}
             </div>
           ))}

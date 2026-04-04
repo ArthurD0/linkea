@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TrustBar from "./components/TrustBar";
 import Problem from "./components/Problem";
 import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
         <Problem />
         <Solution />
         <HowItWorks />

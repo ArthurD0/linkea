@@ -5,8 +5,8 @@ const problems = [
     title: "Les devs coûtent trop cher",
     body: "Embaucher un développeur freelance dépasse le budget d'un projet early-stage. La tech devient un frein avant même d'avoir testé le marché.",
     accent: "#ef4444",
-    glow: "rgba(239,68,68,0.06)",
-    border: "rgba(239,68,68,0.12)",
+    glow: "rgba(239,68,68,0.07)",
+    border: "rgba(239,68,68,0.15)",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -19,8 +19,8 @@ const problems = [
     title: "Impossible de trouver une équipe",
     body: "73% des founders abandonnent leur idée faute de co-fondateur. Les plateformes existantes proposent des freelances, pas des partenaires d'exécution.",
     accent: "#f97316",
-    glow: "rgba(249,115,22,0.05)",
-    border: "rgba(249,115,22,0.12)",
+    glow: "rgba(249,115,22,0.07)",
+    border: "rgba(249,115,22,0.15)",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -33,8 +33,8 @@ const problems = [
     title: "Les idées meurent sans structure",
     body: "Une idée brillante ne suffit pas. Sans méthode, sans équipe motivée, le projet reste un document Notion qui ne verra jamais le jour.",
     accent: "#a855f7",
-    glow: "rgba(168,85,247,0.05)",
-    border: "rgba(168,85,247,0.12)",
+    glow: "rgba(168,85,247,0.07)",
+    border: "rgba(168,85,247,0.15)",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M3.75 13.5 10.5 6.75l4.5 4.5 4.5-4.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -45,7 +45,7 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section className="relative py-36 px-6 overflow-hidden bg-white">
+    <section className="relative py-32 px-6 overflow-hidden bg-white">
 
       <div className="divider absolute top-0 left-0 right-0"/>
 
@@ -57,7 +57,7 @@ export default function Problem() {
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.95] mb-6">
             Lancer une startup,
             <br/>
-            <span className="text-slate-300">c&apos;est compliqué.</span>
+            <span className="text-slate-500">c&apos;est compliqué.</span>
           </h2>
           <p className="body-copy text-lg max-w-lg">
             La majorité des idées échouent non par manque de talent,
@@ -85,17 +85,17 @@ export default function Problem() {
                 <span className="font-black tracking-[-0.04em] leading-none"
                   style={{
                     fontSize: "clamp(52px, 8vw, 80px)",
-                    background: `linear-gradient(135deg, ${p.accent}, rgba(15,23,42,0.5))`,
+                    background: `linear-gradient(135deg, ${p.accent}, rgba(15,23,42,0.4))`,
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                   }}>
                   {p.stat}
                 </span>
-                <p className="text-slate-300 text-sm font-medium mt-1">{p.context}</p>
+                <p className="text-slate-500 text-sm font-medium mt-1">{p.context}</p>
               </div>
 
-              <h3 className="text-base font-semibold text-slate-700 mb-3 leading-snug">{p.title}</h3>
+              <h3 className="text-base font-semibold text-slate-800 mb-3 leading-snug">{p.title}</h3>
               <p className="body-copy text-sm">{p.body}</p>
             </div>
           ))}

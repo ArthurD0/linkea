@@ -8,7 +8,7 @@ const rows = [
 
 export default function Differentiation() {
   return (
-    <section className="relative py-36 px-6 overflow-hidden bg-white">
+    <section className="relative py-32 px-6 overflow-hidden bg-white">
 
       <div className="divider absolute top-0 left-0 right-0"/>
 
@@ -20,7 +20,7 @@ export default function Differentiation() {
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             On n&apos;est pas Malt.
             <br/>
-            <span className="text-gradient">On est bien plus.</span>
+            <span className="text-gradient-pink-blue">On est bien plus.</span>
           </h2>
           <p className="body-copy text-lg max-w-xl mx-auto">
             Linkea n&apos;est pas une marketplace de freelances.
@@ -38,19 +38,19 @@ export default function Differentiation() {
 
           {/* Column headers */}
           <div className="grid grid-cols-3 px-8 py-5"
-            style={{ borderBottom: "1px solid rgba(15,23,42,0.07)", background: "#f8faff" }}>
-            <div className="text-slate-400 text-[11px] font-semibold uppercase tracking-[0.18em]">Critère</div>
+            style={{ borderBottom: "1px solid rgba(15,23,42,0.07)", background: "#f7f7f8" }}>
+            <div className="text-slate-500 text-[11px] font-semibold uppercase tracking-[0.18em]">Critère</div>
             <div className="text-center">
-              <span className="inline-flex items-center gap-2 text-slate-400 text-sm font-semibold">
-                <span className="w-5 h-5 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">✕</span>
+              <span className="inline-flex items-center gap-2 text-slate-500 text-sm font-semibold">
+                <span className="w-5 h-5 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[10px] text-slate-500">✕</span>
                 Les autres
               </span>
             </div>
             <div className="text-center">
               <span className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-xl"
-                style={{ color: "#2563eb", background: "rgba(37,99,235,0.07)", border: "1px solid rgba(37,99,235,0.15)" }}>
+                style={{ color: "#be185d", background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.2)" }}>
                 <span className="w-5 h-5 rounded-full flex items-center justify-center text-[10px]"
-                  style={{ background: "rgba(37,99,235,0.12)", color: "#2563eb" }}>✓</span>
+                  style={{ background: "rgba(236,72,153,0.15)", color: "#be185d" }}>✓</span>
                 Linkea
               </span>
             </div>
@@ -58,18 +58,18 @@ export default function Differentiation() {
 
           {rows.map((row, i) => (
             <div key={i}
-              className="grid grid-cols-3 px-8 py-5 transition-colors hover:bg-slate-50/60 group"
+              className="grid grid-cols-3 px-8 py-5 transition-colors hover:bg-pink-50/40 group"
               style={{ borderBottom: i < rows.length - 1 ? "1px solid rgba(15,23,42,0.06)" : "none" }}>
 
-              <div className="text-slate-600 text-sm font-medium self-center">{row.aspect}</div>
+              <div className="text-slate-700 text-sm font-medium self-center">{row.aspect}</div>
 
               <div className="text-center self-center px-4">
-                <span className="text-slate-300 text-sm">{row.others}</span>
+                <span className="text-slate-400 text-sm">{row.others}</span>
               </div>
 
               <div className="text-center self-center">
-                <span className="inline-flex items-center gap-2 text-slate-700 text-sm font-medium">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#22c55e" strokeWidth="2">
+                <span className="inline-flex items-center gap-2 text-slate-800 text-sm font-medium">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#ec4899" strokeWidth="2">
                     <path d="M2 7l2.5 2.5L12 3" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   {row.linkea}
@@ -79,7 +79,7 @@ export default function Differentiation() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
+        <p className="mt-10 text-center text-slate-500 text-sm max-w-lg mx-auto leading-relaxed">
           Inspiré des meilleurs accélérateurs mondiaux — YC, Entrepreneur First —
           avec une approche centrée sur l&apos;exécution et la complémentarité.
         </p>
