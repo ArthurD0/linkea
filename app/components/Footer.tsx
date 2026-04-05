@@ -13,18 +13,22 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-9 w-9 rounded-xl flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #2563eb 0%, #ec4899 100%)" }}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M8 2L14 8L8 14L2 8Z" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
-                  <circle cx="8" cy="8" r="2.5" fill="white"/>
-                </svg>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/favicon.png" alt="Linkea" style={{ height: 36, width: 36, objectFit: "contain" }} />
               <span className="text-white font-semibold text-lg tracking-[-0.02em]">Linkea</span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Lance ta startup avec une équipe étudiante d&apos;élite. De l&apos;idée au MVP.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-4">
+              Né à l&apos;EFREI Paris · 2026. Linkea connecte porteurs de projet et développeurs étudiants d&apos;élite dans un cadre supervisé — de l&apos;idée au MVP live.
             </p>
+            <div className="flex items-center gap-3">
+              <span className="text-slate-600 text-xs font-medium">Fondé par</span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs px-2.5 py-1 rounded-lg font-semibold"
+                  style={{ background: "rgba(37,99,235,0.12)", color: "#60a5fa" }}>Arthur · CEO</span>
+                <span className="text-xs px-2.5 py-1 rounded-lg font-semibold"
+                  style={{ background: "rgba(236,72,153,0.12)", color: "#f472b6" }}>Amine · CTO</span>
+              </div>
+            </div>
           </div>
 
           {/* Links + social */}
@@ -62,7 +66,7 @@ export default function Footer() {
           <p className="text-slate-500 text-sm">© 2026 Linkea. Tous droits réservés.</p>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#ec4899", opacity: 0.6 }}/>
-            <span className="text-slate-500 text-xs font-medium">Construisons ensemble.</span>
+            <span className="text-slate-500 text-xs font-medium">Linkea · EFREI Paris 2026</span>
           </div>
         </div>
       </div>

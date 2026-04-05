@@ -5,6 +5,7 @@ import Problem from "./components/Problem";
 import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
 import Differentiation from "./components/Differentiation";
+import HubMap from "./components/HubMap";
 import Whitelist from "./components/Whitelist";
 import Footer from "./components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Solution />
         <HowItWorks />
         <Differentiation />
+        <HubMap />
         <Whitelist />
       </main>
       <Footer />

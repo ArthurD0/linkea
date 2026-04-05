@@ -1,9 +1,10 @@
 const rows = [
-  { aspect: "Structure",      others: "Individus isolés",              linkea: "Équipes complètes et complémentaires" },
-  { aspect: "Accompagnement", others: "Livraison et c'est tout",       linkea: "Mentorship + sprints hebdomadaires" },
-  { aspect: "Mindset",        others: "Prestataire de service",         linkea: "Co-founders étudiants motivés" },
-  { aspect: "Résultat",       others: "Code ou slides",                 linkea: "MVP live + stratégie go-to-market" },
-  { aspect: "Sélection",      others: "N'importe qui peut s'inscrire",  linkea: "Sélection rigoureuse sur dossier" },
+  { aspect: "Équipe",          others: "Individus isolés, non vérifiés",    linkea: "Trio complet — dev, PM, design" },
+  { aspect: "Cadre",           others: "Aucune méthode intégrée",           linkea: "Sprints supervisés + roadmap structurée" },
+  { aspect: "Accompagnement",  others: "Livraison et c'est tout",           linkea: "Mentors praticiens à chaque sprint" },
+  { aspect: "Mindset",         others: "Prestataire de service",            linkea: "Co-fondateurs motivés par ton succès" },
+  { aspect: "Résultat",        others: "Code sans contexte produit",        linkea: "MVP live + stratégie go-to-market" },
+  { aspect: "Sélection",       others: "Inscription ouverte à tous",        linkea: "Sélection rigoureuse sur dossier" },
 ];
 
 export default function Differentiation() {
@@ -18,13 +19,13 @@ export default function Differentiation() {
         <div className="text-center mb-16">
           <p className="section-label mb-5">Notre différence</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
-            On n&apos;est pas Malt.
+            On n&apos;est pas une marketplace.
             <br/>
             <span className="text-gradient-pink-blue">On est bien plus.</span>
           </h2>
           <p className="body-copy text-lg max-w-xl mx-auto">
-            Linkea n&apos;est pas une marketplace de freelances.
-            C&apos;est un accélérateur d&apos;exécution pour founders ambitieux.
+            Linkea n&apos;est pas Malt, CoFoundersLab ou LinkedIn.
+            C&apos;est un système complet d&apos;exécution — de l&apos;idée au MVP live.
           </p>
         </div>
 
@@ -80,8 +81,8 @@ export default function Differentiation() {
         </div>
 
         <p className="mt-10 text-center text-slate-500 text-sm max-w-lg mx-auto leading-relaxed">
-          Inspiré des meilleurs accélérateurs mondiaux — YC, Entrepreneur First —
-          avec une approche centrée sur l&apos;exécution et la complémentarité.
+          Né à l&apos;EFREI Paris en 2026, inspiré des meilleurs accélérateurs mondiaux (YC, Entrepreneur First) —
+          avec une approche centrée sur l&apos;exécution concrète et la complémentarité des équipes.
         </p>
       </div>
     </section>

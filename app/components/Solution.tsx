@@ -45,10 +45,10 @@ export default function Solution() {
               <span className="text-slate-300 text-sm font-mono font-bold self-start mt-2">01</span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Équipes curées, pas des freelances</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Équipes complètes dans un cadre supervisé</h3>
             <p className="body-copy text-sm max-w-sm mb-6">
-              Chaque équipe Linkea est sélectionnée sur dossier. Développeurs, designers
-              et profils business travaillent ensemble dès le premier jour.
+              Chaque équipe est sélectionnée sur dossier et intégrée dans un cadre supervisé.
+              Dev, PM et designer — motivés comme des co-fondateurs, pas comme des prestataires.
             </p>
 
             {/* Team preview */}
@@ -83,10 +83,10 @@ export default function Solution() {
               <span className="text-slate-300 text-sm font-mono font-bold">02</span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Exécution réelle</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Sprints structurés, livraisons réelles</h3>
             <p className="body-copy text-sm mb-6">
-              Sprints hebdomadaires, roadmap concrète et livraisons mesurables.
-              De la stratégie au code.
+              Roadmap claire, sprints hebdomadaires, livrables mesurables à chaque itération.
+              Du kick-off au premier utilisateur — sans dérapage.
             </p>
 
             <div className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3.5 py-1.5"
@@ -111,9 +111,9 @@ export default function Solution() {
               <span className="text-slate-300 text-sm font-mono font-bold">03</span>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Mentorship de praticiens</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Mentors praticiens, pas des professeurs</h3>
             <p className="body-copy text-sm mb-6">
-              Founders, PMs, investisseurs. Pas des professeurs — des gens qui ont lancé des startups.
+              Founders, PMs et investisseurs qui ont lancé des produits. Un accès direct au terrain — pas à des slides de cours.
             </p>
 
             <div className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3.5 py-1.5"

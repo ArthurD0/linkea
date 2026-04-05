@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Solution",          href: "#solution" },
-  { label: "Comment ça marche", href: "#how-it-works" },
-  { label: "Rejoindre",         href: "#whitelist" },
+  { label: "Solution",      href: "/#solution" },
+  { label: "Pourquoi nous", href: "/pourquoi-nous" },
 ];
 
 export default function Navbar() {
@@ -32,9 +31,10 @@ export default function Navbar() {
           <nav className="glass-nav flex items-center justify-between rounded-2xl px-5 py-3">
 
             {/* Logo complet */}
-            <a href="/" className="flex items-center shrink-0">
+            <a href="/" className="flex items-center gap-2.5 shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Linkea" style={{ height: 36, width: "auto" }} />
+              <img src="/favicon.png" alt="Linkea" style={{ height: 32, width: 32, objectFit: "contain" }} />
+              <span className="text-slate-900 font-semibold text-[17px] tracking-[-0.02em]">Linkea</span>
             </a>
 
             {/* Nav links */}

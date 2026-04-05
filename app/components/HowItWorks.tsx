@@ -4,7 +4,7 @@ const steps = [
   {
     n: "01",
     title: "Soumets ton idée",
-    body: "Décris ton projet en quelques lignes. Secteur, problème à résoudre, stade d'avancement. Une vision claire suffit.",
+    body: "Décris ton projet en quelques lignes : secteur, problème à résoudre, stade d'avancement. Moins de 5 minutes — une vision suffit.",
     detail: "< 5 minutes",
     color: "#ec4899",
     bg: "rgba(236,72,153,0.08)",
@@ -18,7 +18,7 @@ const steps = [
   {
     n: "02",
     title: "On te matche avec une équipe",
-    body: "Notre système analyse ton projet et sélectionne les profils complémentaires. Dev, designer, PM — une équipe complète.",
+    body: "On analyse ton projet et sélectionne une équipe complémentaire sur dossier. Dev, PM, designer — trio validé, pas des profils anonymes.",
     detail: "Sous 72h",
     color: "#7c3aed",
     bg: "rgba(124,58,237,0.08)",
@@ -32,7 +32,7 @@ const steps = [
   {
     n: "03",
     title: "Lance ton projet",
-    body: "Sprints hebdomadaires, check-ins avec mentors, livraisons mesurables. Du kick-off au premier utilisateur.",
+    body: "Sprints hebdomadaires, check-ins avec mentors praticiens, livraisons mesurables à chaque itération. Du kick-off au premier utilisateur réel.",
     detail: "MVP en 4–8 sem.",
     color: "#2563eb",
     bg: "rgba(37,99,235,0.08)",
@@ -70,8 +70,8 @@ export default function HowItWorks() {
             <span className="text-slate-500">en 3 étapes.</span>
           </h2>
           <p className="body-copy text-lg max-w-md mx-auto">
-            Un processus clair pour passer de ton Google Doc
-            à un MVP utilisable par de vrais utilisateurs.
+            Un cadre supervisé pour passer de ton idée brute
+            à un MVP live, testable par de vrais utilisateurs.
           </p>
         </div>
 

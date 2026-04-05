@@ -94,8 +94,8 @@ export default function Whitelist() {
         </h2>
 
         <p className="body-copy text-lg mb-14 max-w-md mx-auto">
-          On sélectionne les founders, étudiants tech et business
-          les plus ambitieux. Accès limité aux premiers membres.
+          On sélectionne les porteurs de projet et les développeurs étudiants les plus ambitieux.
+          Beta gratuite en an 1 — 100 places, accès sur dossier.
         </p>
 
         {/* Scarcity meter */}

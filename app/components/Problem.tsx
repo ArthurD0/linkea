@@ -1,9 +1,9 @@
 const problems = [
   {
     stat: "€150",
-    context: "par heure",
-    title: "Les devs coûtent trop cher",
-    body: "Embaucher un développeur freelance dépasse le budget d'un projet early-stage. La tech devient un frein avant même d'avoir testé le marché.",
+    context: "par heure freelance",
+    title: "Les freelances coûtent trop cher",
+    body: "Un dev senior facture entre €100 et €150/h — soit €12 000 à €20 000 pour un MVP basique. Hors de portée pour un porteur de projet early-stage, sans garantie de résultat.",
     accent: "#ef4444",
     glow: "rgba(239,68,68,0.07)",
     border: "rgba(239,68,68,0.15)",
@@ -15,9 +15,9 @@ const problems = [
   },
   {
     stat: "73%",
-    context: "des startups échouent",
-    title: "Impossible de trouver une équipe",
-    body: "73% des founders abandonnent leur idée faute de co-fondateur. Les plateformes existantes proposent des freelances, pas des partenaires d'exécution.",
+    context: "des idées abandonnées",
+    title: "Impossible de trouver une équipe de confiance",
+    body: "73% des porteurs de projet renoncent faute d'équipe. Les réseaux existants proposent des profils anonymes non vérifiés — pas des co-fondateurs engagés dans ton succès.",
     accent: "#f97316",
     glow: "rgba(249,115,22,0.07)",
     border: "rgba(249,115,22,0.15)",
@@ -29,9 +29,9 @@ const problems = [
   },
   {
     stat: "0",
-    context: "MVP sans exécution",
-    title: "Les idées meurent sans structure",
-    body: "Une idée brillante ne suffit pas. Sans méthode, sans équipe motivée, le projet reste un document Notion qui ne verra jamais le jour.",
+    context: "méthode pour l'early-stage",
+    title: "Sans cadre, aucune idée ne devient produit",
+    body: "Il n'existe pas de méthode clé en main pour les projets étudiants early-stage. Sans sprints, sans roadmap, sans cadre supervisé — le projet reste un Google Doc.",
     accent: "#a855f7",
     glow: "rgba(168,85,247,0.07)",
     border: "rgba(168,85,247,0.15)",
@@ -60,8 +60,8 @@ export default function Problem() {
             <span className="text-slate-500">c&apos;est compliqué.</span>
           </h2>
           <p className="body-copy text-lg max-w-lg">
-            La majorité des idées échouent non par manque de talent,
-            mais par manque de ressources et de structure.
+            La majorité des projets étudiants meurent non par manque d&apos;ambition,
+            mais par manque d&apos;équipe, de méthode et d&apos;accès aux bons profils.
           </p>
         </div>
 

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(npx tsc:*)",
+      "Bash(mkdir -p /c/Users/amine/starcustom)",
+      "Bash(cp /c/Users/amine/linkea/next.config.ts /c/Users/amine/starcustom/)",
+      "Bash(cp /c/Users/amine/linkea/tsconfig.json /c/Users/amine/starcustom/)",
+      "Bash(cp /c/Users/amine/linkea/postcss.config.mjs /c/Users/amine/starcustom/)",
+      "Bash(cp /c/Users/amine/linkea/eslint.config.mjs /c/Users/amine/starcustom/)",
+      "Bash(mkdir -p /c/Users/amine/starcustom/app/components)",
+      "Bash(mkdir -p /c/Users/amine/starcustom/app/ciel-etoile)",
+      "Bash(mkdir -p /c/Users/amine/starcustom/app/carplay)",
+      "Bash(mkdir -p /c/Users/amine/starcustom/app/led-ambiance)",
+      "Bash(mkdir -p /c/Users/amine/starcustom/app/qui-sommes-nous)",
+      "Bash(cp /c/Users/amine/linkea/app/page.tsx /c/Users/amine/starcustom/app/)",
+      "Bash(cp /c/Users/amine/linkea/app/layout.tsx /c/Users/amine/starcustom/app/)",
+      "Bash(cp /c/Users/amine/linkea/app/globals.css /c/Users/amine/starcustom/app/)",
+      "Bash(cp /c/Users/amine/linkea/app/components/Navbar.tsx /c/Users/amine/starcustom/app/components/)",
+      "Bash(cp /c/Users/amine/linkea/app/components/Hero.tsx /c/Users/amine/starcustom/app/components/)",
+      "Bash(git restore:*)",
+      "Bash(code projects.code-workspace)",
+      "Bash(\"/c/Users/amine/AppData/Local/Programs/Microsoft VS Code/Code.exe\" \"C:\\\\\\\\Users\\\\\\\\amine\\\\\\\\projects.code-workspace\")",
+      "Bash(\"/c/Users/amine/AppData/Local/Programs/Microsoft VS Code/Code.exe\" --add \"C:\\\\Users\\\\amine\\\\starcustom\")",
+      "Bash(\"/c/Users/amine/AppData/Local/Programs/Microsoft VS Code/Code.exe\" \"C:\\\\Users\\\\amine\\\\projects.code-workspace\")",
+      "WebFetch(domain:asendia.ai)",
+      "Bash(explorer \"c:\\\\Users\\\\amine\\\\linkea\\\\public\")",
+      "Bash(start explorer:*)",
+      "Bash(node -e \"require\\('react-simple-maps'\\); console.log\\('ok'\\)\")",
+      "Bash(node -e ':*)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}

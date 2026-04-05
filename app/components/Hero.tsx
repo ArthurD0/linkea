@@ -57,28 +57,28 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "#ec4899" }}/>
             <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#ec4899" }}/>
           </span>
-          <span className="text-slate-600 text-sm font-medium tracking-wide">Beta privée · Places limitées</span>
+          <span className="text-slate-600 text-sm font-medium tracking-wide">Bêta privée · 100 premières places</span>
           <span className="w-px h-3.5 bg-pink-200"/>
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#be185d" }}>2026</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#be185d" }}>Efrei Paris · 2026</span>
         </div>
 
         {/* Headline */}
         <h1 className="opacity-0-init animate-fade-up delay-200 font-bold tracking-[-0.035em] leading-[0.96] mb-10 max-w-5xl">
           <span className="block text-[clamp(50px,8.5vw,104px)] text-slate-900">
-            Lance ta startup
+            Ton idée mérite
           </span>
           <span className="block text-[clamp(50px,8.5vw,104px)] text-gradient-vivid">
-            avec une équipe
+            une vraie équipe.
           </span>
           <span className="block text-[clamp(34px,5.5vw,68px)] font-semibold mt-4 text-slate-400">
-            étudiante d&apos;élite
+            pas juste un freelance.
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="opacity-0-init animate-fade-up delay-300 body-copy max-w-xl text-lg sm:text-[19px] mb-14">
-          Linkea connecte développeurs, profils business et mentors
-          pour construire des startups — de l&apos;idée au MVP en quelques semaines.
+          Linkea connecte porteurs de projet et développeurs étudiants motivés
+          dans un cadre supervisé — sprints structurés, mentors praticiens, MVP livré en 4 à 8 semaines.
         </p>
 
         {/* CTA buttons */}
@@ -107,9 +107,9 @@ export default function Hero() {
             boxShadow: "0 1px 3px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06)",
           }}>
           {[
-            { val: "4–8",  unit: "sem.",    sub: "idée → MVP" },
-            { val: "100%", unit: "validé",  sub: "profils vérifiés" },
-            { val: "3×",   unit: "experts", sub: "dev · biz · design" },
+            { val: "4–8",  unit: "sem.",    sub: "idée → MVP live" },
+            { val: "100%", unit: "dossier", sub: "sélection rigoureuse" },
+            { val: "0€",   unit: "bêta",    sub: "gratuit en an 1" },
           ].map((s, i) => (
             <div key={i} className="flex flex-col items-center gap-1.5 px-10 py-5"
               style={{ borderRight: i < 2 ? "1px solid rgba(15,23,42,0.06)" : "none" }}>
