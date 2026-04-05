@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import TrustBar from "./components/TrustBar";
 import Problem from "./components/Problem";
 import Solution from "./components/Solution";
+import Platform from "./components/Platform";
 import HowItWorks from "./components/HowItWorks";
 import Differentiation from "./components/Differentiation";
 import HubMap from "./components/HubMap";
@@ -19,6 +20,7 @@ export default function Home() {
         <Problem />
         <Solution />
         <HowItWorks />
+        <Platform />
         <Differentiation />
         <HubMap />
         <Whitelist />
