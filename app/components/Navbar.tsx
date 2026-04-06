@@ -31,10 +31,9 @@ export default function Navbar() {
           <nav className="glass-nav flex items-center justify-between rounded-2xl px-5 py-3">
 
             {/* Logo complet */}
-            <a href="/" className="flex items-center gap-2.5 shrink-0">
+            <a href="/" className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/favicon.png" alt="Linkea" style={{ height: 32, width: 32, objectFit: "contain" }} />
-              <span className="text-slate-900 font-semibold text-[17px] tracking-[-0.02em]">Linkea</span>
+              <img src="/logo.png" alt="Linkea" style={{ height: 36, width: "auto", objectFit: "contain" }} />
             </a>
 
             {/* Nav links */}
@@ -89,9 +88,9 @@ export default function Navbar() {
           }}>
 
           {/* Favicon seul */}
-          <a href="/" className="flex items-center justify-center shrink-0">
+          <a href="/" className="shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/favicon.png" alt="Linkea" style={{ height: 32, width: 32, objectFit: "contain" }} />
+            <img src="/logo.png" alt="Linkea" style={{ height: 28, width: "auto", objectFit: "contain" }} />
           </a>
 
           {/* Separator */}

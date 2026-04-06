@@ -12,10 +12,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/favicon.png" alt="Linkea" style={{ height: 40, width: 40, objectFit: "contain" }} />
-              <span className="text-slate-900 font-bold text-xl tracking-[-0.02em]">Linkea</span>
+              <img src="/logo.png" alt="Linkea" style={{ height: 40, width: "auto", objectFit: "contain" }} />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
               Connecte ton projet avec une équipe étudiante d&apos;élite et transforme ton idée en produit — en quelques semaines.
@@ -104,9 +103,9 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-slate-400 text-sm">© 2026 Linkea. Tous droits réservés.</p>
             <div className="flex items-center gap-6 text-slate-400 text-sm">
-              <a href="#" className="hover:text-slate-600 transition-colors duration-200">Politique de confidentialité</a>
-              <a href="#" className="hover:text-slate-600 transition-colors duration-200">Mentions légales</a>
-              <a href="#" className="hover:text-slate-600 transition-colors duration-200">CGU</a>
+              <a href="/politique-de-confidentialite" className="hover:text-slate-600 transition-colors duration-200">Politique de confidentialité</a>
+              <a href="/mentions-legales" className="hover:text-slate-600 transition-colors duration-200">Mentions légales</a>
+              <a href="/cgu" className="hover:text-slate-600 transition-colors duration-200">CGU</a>
             </div>
           </div>
         </div>

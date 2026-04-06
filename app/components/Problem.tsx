@@ -52,17 +52,25 @@ export default function Problem() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="max-w-2xl mb-20">
-          <p className="section-label mb-5">Le problème</p>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.95] mb-6">
-            Lancer une startup,
-            <br/>
-            <span className="text-slate-500">c&apos;est compliqué.</span>
-          </h2>
-          <p className="body-copy text-lg max-w-lg">
-            La majorité des projets étudiants meurent non par manque d&apos;ambition,
-            mais par manque d&apos;équipe, de méthode et d&apos;accès aux bons profils.
-          </p>
+        <div className="flex items-center mb-20 gap-4">
+          <div className="max-w-xl">
+            <p className="section-label mb-5">Le problème</p>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.95] mb-6">
+              Lancer une startup,
+              <br/>
+              <span className="text-slate-500">c&apos;est compliqué.</span>
+            </h2>
+            <p className="body-copy text-lg max-w-lg">
+              La majorité des projets étudiants meurent non par manque d&apos;ambition,
+              mais par manque d&apos;équipe, de méthode et d&apos;accès aux bons profils.
+            </p>
+          </div>
+          {/* Mascotte question — à droite du titre, regardant vers la gauche */}
+          <div className="hidden lg:block pointer-events-none select-none shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mascot/linkeo_question.png" alt=""
+              style={{ width: 210, height: "auto", filter: "drop-shadow(0 8px 20px rgba(15,23,42,0.10))", transform: "scaleX(-1)" }}/>
+          </div>
         </div>
 
         {/* Cards */}

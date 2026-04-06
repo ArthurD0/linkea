@@ -7,10 +7,9 @@ function AppNav({ active }: { active: string }) {
   return (
     <div className="flex items-center justify-between px-5 py-3"
       style={{ background: "#f8f9fa", borderBottom: "1px solid rgba(15,23,42,0.07)" }}>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/favicon.png" alt="Linkea" style={{ width: 20, height: 20, objectFit: "contain" }}/>
-        <span className="font-bold text-slate-800 text-sm">Linkea</span>
+        <img src="/logo.png" alt="Linkea" style={{ height: 20, width: "auto", objectFit: "contain" }}/>
       </div>
       <div className="hidden sm:flex items-center gap-5">
         {["Accueil", "Projets", "Messages", "Sprints"].map((l) => (
@@ -347,7 +346,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background:"#ec4899" }}/>
               <span className="relative inline-flex rounded-full h-2 w-2" style={{ background:"#ec4899" }}/>
             </span>
-            <span className="text-slate-600 text-sm font-medium">Bêta privée · 100 premières places</span>
+            <span className="text-slate-600 text-sm font-medium">Bêta privée · 500 premières places</span>
           </div>
 
           <h1 className="opacity-0-init animate-fade-up delay-200 font-bold tracking-[-0.035em] leading-[0.95] mb-5">
@@ -464,6 +463,7 @@ export default function Hero() {
               <span>Cliquer pour explorer · <span className="font-semibold text-slate-600">{LABELS[(offset) % 3]}</span></span>
             </div>
           </div>
+
         </div>
       </div>
 

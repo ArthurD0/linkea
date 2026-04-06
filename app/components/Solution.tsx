@@ -8,7 +8,13 @@ export default function Solution() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="relative text-center mb-20">
+          {/* Mascotte salut — à gauche du titre */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mascot/linkeo_salut.png" alt=""
+              style={{ width: 190, height: "auto", filter: "drop-shadow(0 8px 20px rgba(15,23,42,0.12))" }}/>
+          </div>
           <p className="section-label-pink mb-5">La solution</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             On construit les équipes.
@@ -19,10 +25,10 @@ export default function Solution() {
             Linkea n&apos;est pas un outil — c&apos;est un système complet
             pour passer de l&apos;idée au produit.
           </p>
-        </div>
+        </div> {/* end header */}
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4">
 
           {/* Card 1 — pink featured, large */}
           <div className="md:col-span-2 glass-card rounded-3xl p-8 group relative overflow-hidden min-h-[280px]"

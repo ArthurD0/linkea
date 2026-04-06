@@ -482,7 +482,7 @@ export default function Platform() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="relative text-center mb-14">
           <p className="section-label-pink mb-5">Produit</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             Tout ce dont tu as besoin
@@ -493,6 +493,12 @@ export default function Platform() {
             Une plateforme produit et un cadre d&apos;accompagnement complet —
             de la soumission de l&apos;idée à la certification du MVP.
           </p>
+          {/* Mascotte ordi */}
+          <div className="absolute bottom-0 left-0 pointer-events-none select-none hidden lg:block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mascot/linkeo_ordi.png" alt=""
+              style={{ width: 210, height: "auto", filter: "drop-shadow(0 8px 20px rgba(37,99,235,0.12))" }}/>
+          </div>
         </div>
 
         {/* Tab switcher */}

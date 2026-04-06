@@ -62,7 +62,7 @@ export default function HowItWorks() {
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="relative text-center mb-20">
           <p className="section-label-pink mb-5">Process</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             De l&apos;idée au produit
@@ -73,10 +73,17 @@ export default function HowItWorks() {
             Un cadre supervisé pour passer de ton idée brute
             à un MVP live, testable par de vrais utilisateurs.
           </p>
+          {/* Mascotte ampoule — à côté du titre */}
+          <div className="absolute right-0 top-0 pointer-events-none select-none hidden lg:block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mascot/linkeo_ampoule.png" alt=""
+              style={{ width: 200, height: "auto", filter: "drop-shadow(0 8px 20px rgba(236,72,153,0.15))" }}/>
+          </div>
         </div>
 
         {/* Steps */}
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-5">
+
 
           {/* Connector (desktop) */}
           <div className="hidden md:block absolute top-14 pointer-events-none h-px"
@@ -153,7 +160,7 @@ export default function HowItWorks() {
               Le process est clair. Tu es prêt ?
             </p>
             <p className="text-slate-500 text-sm">
-              Rejoins les 100 premiers membres · Gratuit en bêta · Sélection sur dossier
+              Rejoins les 500 premiers membres · Gratuit en bêta · Sélection sur dossier
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">

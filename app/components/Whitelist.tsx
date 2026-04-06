@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 
-const TOTAL = 100;
-const TAKEN = 23;
+const TOTAL = 500;
+const TAKEN = 47;
 
 export default function Whitelist() {
   const [email, setEmail]     = useState("");
@@ -48,6 +48,7 @@ export default function Whitelist() {
 
       <div className="divider absolute top-0 left-0 right-0" style={{ background: "rgba(236,72,153,0.1)" }}/>
 
+
       {/* Pink central glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="absolute w-[800px] h-[500px] rounded-full"
@@ -84,18 +85,26 @@ export default function Whitelist() {
         </div>
 
         {/* Headline */}
-        <h2 className="font-bold tracking-[-0.03em] leading-[0.97] mb-7">
-          <span className="block text-[clamp(42px,7vw,80px)] text-slate-900">
-            Rejoins les premiers
-          </span>
-          <span className="block text-[clamp(42px,7vw,80px)] text-gradient-pink">
-            membres de Linkea
-          </span>
-        </h2>
+        <div className="relative">
+          <h2 className="font-bold tracking-[-0.03em] leading-[0.97] mb-7">
+            <span className="block text-[clamp(42px,7vw,80px)] text-slate-900">
+              Rejoins les premiers
+            </span>
+            <span className="block text-[clamp(42px,7vw,80px)] text-gradient-pink">
+              membres de Linkea
+            </span>
+          </h2>
+          {/* Mascotte drapeau — à côté du titre */}
+          <div className="absolute -left-52 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/mascot/linkeo_drapeau.png" alt=""
+              style={{ width: 220, height: "auto", filter: "drop-shadow(0 8px 24px rgba(236,72,153,0.18))" }}/>
+          </div>
+        </div>
 
         <p className="body-copy text-lg mb-14 max-w-md mx-auto">
           On sélectionne les porteurs de projet et les développeurs étudiants les plus ambitieux.
-          Beta gratuite en an 1 — 100 places, accès sur dossier.
+          Beta gratuite en an 1 — 500 places, accès sur dossier.
         </p>
 
         {/* Scarcity meter */}
