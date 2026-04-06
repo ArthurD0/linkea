@@ -1,11 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import TrustBar from "./components/TrustBar";
 import Problem from "./components/Problem";
 import Solution from "./components/Solution";
-import Platform from "./components/Platform";
 import HowItWorks from "./components/HowItWorks";
-import Differentiation from "./components/Differentiation";
+import Platform from "./components/Platform";
 import HubMap from "./components/HubMap";
 import Whitelist from "./components/Whitelist";
 import Footer from "./components/Footer";
@@ -16,12 +14,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
         <Problem />
         <Solution />
         <HowItWorks />
         <Platform />
-        <Differentiation />
         <HubMap />
         <Whitelist />
       </main>

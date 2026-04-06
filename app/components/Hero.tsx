@@ -1,341 +1,475 @@
 "use client";
 
-const ARC = 2 * Math.PI * 36;
+import { useState, useEffect, useRef, useCallback } from "react";
 
-export default function Hero() {
+/* ── Shared app nav ─────────────────────────────────────────────── */
+function AppNav({ active }: { active: string }) {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white">
+    <div className="flex items-center justify-between px-5 py-3"
+      style={{ background: "#f8f9fa", borderBottom: "1px solid rgba(15,23,42,0.07)" }}>
+      <div className="flex items-center gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/favicon.png" alt="Linkea" style={{ width: 20, height: 20, objectFit: "contain" }}/>
+        <span className="font-bold text-slate-800 text-sm">Linkea</span>
+      </div>
+      <div className="hidden sm:flex items-center gap-5">
+        {["Accueil", "Projets", "Messages", "Sprints"].map((l) => (
+          <span key={l} className="text-[12px] font-medium"
+            style={{ color: l === active ? "#ec4899" : "#94a3b8" }}>{l}</span>
+        ))}
+      </div>
+      <div className="w-7 h-7 rounded-full flex items-center justify-center font-bold text-[11px] text-white"
+        style={{ background: "linear-gradient(135deg, #2563eb, #ec4899)" }}>A</div>
+    </div>
+  );
+}
 
-      {/* Blue aurora — top left */}
-      <div className="absolute pointer-events-none animate-aurora"
-        style={{
-          top: "-15%", left: "-10%",
-          width: "800px", height: "800px",
-          borderRadius: "50%",
-          background: "radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, rgba(59,130,246,0.03) 40%, transparent 65%)",
-          filter: "blur(80px)",
-        }} />
-
-      {/* Pink aurora — bottom right */}
-      <div className="absolute pointer-events-none animate-aurora-r"
-        style={{
-          bottom: "-20%", right: "-12%",
-          width: "700px", height: "700px",
-          borderRadius: "50%",
-          background: "radial-gradient(ellipse, rgba(236,72,153,0.07) 0%, rgba(244,114,182,0.03) 40%, transparent 65%)",
-          filter: "blur(70px)",
-        }} />
-
-      {/* Top-center spotlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-        style={{
-          width: "1200px", height: "700px",
-          background: "radial-gradient(ellipse 55% 70% at 50% -5%, rgba(37,99,235,0.07) 0%, rgba(236,72,153,0.03) 45%, transparent 65%)",
-        }} />
-
-      {/* Subtle grid */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(15,23,42,0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(15,23,42,0.025) 1px, transparent 1px)
-          `,
-          backgroundSize: "72px 72px",
-          maskImage: "radial-gradient(ellipse 75% 65% at 50% 40%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 55%, transparent 80%)",
-        }} />
-
-      {/* ── Content ── */}
-      <div className="relative z-10 mx-auto max-w-6xl w-full px-6 pt-32 pb-24 flex flex-col items-center text-center">
-
-        {/* Status badge */}
-        <div className="opacity-0-init animate-fade-up delay-100 inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-14"
-          style={{
-            background: "#fdf4f8",
-            border: "1px solid rgba(236,72,153,0.2)",
-          }}>
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "#ec4899" }}/>
-            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#ec4899" }}/>
-          </span>
-          <span className="text-slate-600 text-sm font-medium tracking-wide">Bêta privée · 100 premières places</span>
-          <span className="w-px h-3.5 bg-pink-200"/>
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#be185d" }}>Efrei Paris · 2026</span>
+/* ── Mockup 1 : Accueil ─────────────────────────────────────────── */
+function AccueilMockup() {
+  return (
+    <div className="rounded-3xl overflow-hidden h-full flex flex-col"
+      style={{ background: "#fff", border: "1px solid rgba(15,23,42,0.09)", boxShadow: "0 4px 6px rgba(15,23,42,0.04), 0 24px 80px rgba(15,23,42,0.10)" }}>
+      <div className="h-[2px]" style={{ background: "linear-gradient(90deg,#3b82f6,#ec4899,#8b5cf6)" }}/>
+      <AppNav active="Accueil"/>
+      <div className="p-5 flex flex-col gap-4 flex-1">
+        {/* Greeting */}
+        <div>
+          <p className="text-slate-900 font-bold text-base">Bonjour Alexandre 👋</p>
+          <p className="text-slate-400 text-[12px] mt-0.5">FinTech AI · Sprint 3 en cours</p>
         </div>
-
-        {/* Headline */}
-        <h1 className="opacity-0-init animate-fade-up delay-200 font-bold tracking-[-0.035em] leading-[0.96] mb-10 max-w-5xl">
-          <span className="block text-[clamp(50px,8.5vw,104px)] text-slate-900">
-            Ton idée mérite
-          </span>
-          <span className="block text-[clamp(50px,8.5vw,104px)] text-gradient-vivid">
-            une vraie équipe.
-          </span>
-          <span className="block text-[clamp(34px,5.5vw,68px)] font-semibold mt-4 text-slate-400">
-            pas juste un freelance.
-          </span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="opacity-0-init animate-fade-up delay-300 body-copy max-w-xl text-lg sm:text-[19px] mb-14">
-          Linkea connecte porteurs de projet et développeurs étudiants motivés
-          dans un cadre supervisé — sprints structurés, mentors praticiens, MVP livré en 4 à 8 semaines.
-        </p>
-
-        {/* CTA buttons */}
-        <div className="opacity-0-init animate-fade-up delay-400 flex flex-col sm:flex-row items-center gap-4 mb-20">
-          <a href="#whitelist" className="btn-pink inline-flex items-center gap-3 text-white font-semibold text-[15px] px-10 rounded-2xl"
-            style={{ paddingTop: "18px", paddingBottom: "18px" }}>
-            Accéder à la beta privée
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2">
-              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-
-          <a href="#how-it-works" className="btn-ghost">
-            Comment ça marche
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8">
-              <path d="M3 7h8M8 4l3 3-3 3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </div>
-
-        {/* Stats pill */}
-        <div className="opacity-0-init animate-fade-up delay-500 inline-flex flex-col sm:flex-row items-stretch mb-28 rounded-2xl overflow-hidden"
-          style={{
-            background: "#ffffff",
-            border: "1px solid rgba(15,23,42,0.08)",
-            boxShadow: "0 1px 3px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06)",
-          }}>
+        {/* Stat chips */}
+        <div className="flex gap-2 flex-wrap">
           {[
-            { val: "4–8",  unit: "sem.",    sub: "idée → MVP live" },
-            { val: "100%", unit: "dossier", sub: "sélection rigoureuse" },
-            { val: "0€",   unit: "bêta",    sub: "gratuit en an 1" },
-          ].map((s, i) => (
-            <div key={i} className="flex flex-col items-center gap-1.5 px-10 py-5"
-              style={{ borderRight: i < 2 ? "1px solid rgba(15,23,42,0.06)" : "none" }}>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-3xl font-black text-slate-900 tracking-tight">{s.val}</span>
-                <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "#be185d" }}>{s.unit}</span>
-              </div>
-              <p className="text-xs text-slate-500">{s.sub}</p>
+            { label: "Sprint",     val: "3/8",  color: "#ec4899" },
+            { label: "Livrables",  val: "5/7 ✓", color: "#16a34a" },
+            { label: "Équipe",     val: "3 pers", color: "#2563eb" },
+          ].map((s) => (
+            <div key={s.label} className="flex items-center gap-2 rounded-xl px-3 py-2"
+              style={{ background: `${s.color}08`, border: `1px solid ${s.color}20` }}>
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: s.color }}/>
+              <span className="text-[11px] text-slate-500">{s.label}</span>
+              <span className="text-[11px] font-bold" style={{ color: s.color }}>{s.val}</span>
             </div>
           ))}
         </div>
-
-        {/* Dashboard mockup */}
-        <div className="opacity-0-init animate-fade-up delay-700 w-full max-w-4xl relative">
-
-          {/* Glow beneath */}
-          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-4/5 h-20 pointer-events-none"
-            style={{
-              background: "radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%)",
-              filter: "blur(20px)",
-            }}/>
-
-          {/* Floating mockup */}
-          <div className="animate-float-card relative gradient-border rounded-3xl overflow-hidden"
-            style={{
-              background: "linear-gradient(160deg, #0c1a3a 0%, #060e25 100%)",
-              boxShadow: `
-                0 0 0 1px rgba(15,23,42,0.1),
-                0 40px 100px rgba(15,23,42,0.15),
-                0 0 60px rgba(37,99,235,0.06)
-              `,
-            }}>
-
-            {/* Glowing top border */}
-            <div className="h-[1.5px] w-full animate-border-glow"
-              style={{ background: "linear-gradient(90deg, transparent 2%, rgba(59,130,246,0.5) 25%, rgba(244,114,182,0.6) 50%, rgba(99,102,241,0.5) 75%, transparent 98%)" }}/>
-
-            {/* Window chrome */}
-            <div className="flex items-center gap-3 px-6 py-4"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(239,68,68,0.55)" }}/>
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(234,179,8,0.55)" }}/>
-                <div className="w-3 h-3 rounded-full" style={{ background: "rgba(34,197,94,0.55)" }}/>
-              </div>
-              <div className="flex-1 flex justify-center">
-                <div className="flex items-center gap-2 rounded-lg px-4 py-1.5"
-                  style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"/>
-                  <span className="text-[11px] font-mono" style={{ color: "rgba(147,197,253,0.35)" }}>
-                    app.linkea.co/dashboard
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "rgba(236,72,153,0.6)" }}/>
-                <span className="text-[11px] font-mono" style={{ color: "rgba(244,114,182,0.4)" }}>live</span>
-              </div>
+        {/* Next event */}
+        <div className="rounded-2xl p-3.5" style={{ background: "rgba(236,72,153,0.04)", border: "1px solid rgba(236,72,153,0.15)" }}>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-400 mb-2">Prochain événement</p>
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+              style={{ background: "rgba(236,72,153,0.1)", border: "1px solid rgba(236,72,153,0.2)" }}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ec4899" strokeWidth="1.5">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18" strokeLinecap="round"/>
+              </svg>
             </div>
+            <div>
+              <p className="text-slate-900 text-sm font-semibold">Check-in Sprint 4</p>
+              <p className="text-slate-400 text-[11px]">Vendredi 16 juin · 14h00 · Julien M.</p>
+            </div>
+          </div>
+        </div>
+        {/* Activity */}
+        <div className="flex flex-col gap-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-400">Activité récente</p>
+          {[
+            { dot: "#16a34a", txt: "API auth déployée en staging",    who: "Dev",    time: "2h" },
+            { dot: "#2563eb", txt: "Roadmap Q3 mise à jour",          who: "PM",     time: "hier" },
+            { dot: "#7c3aed", txt: "Maquettes v2 partagées",          who: "Design", time: "2j" },
+          ].map((a) => (
+            <div key={a.txt} className="flex items-center gap-2.5 rounded-xl px-3 py-2.5"
+              style={{ background: "#f8f9fb", border: "1px solid rgba(15,23,42,0.06)" }}>
+              <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: a.dot }}/>
+              <span className="text-[11px] flex-1 truncate text-slate-600">{a.txt}</span>
+              <span className="text-[10px] text-slate-400 font-medium shrink-0">{a.who} · {a.time}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
-            {/* 3-column layout */}
-            <div className="grid grid-cols-[1fr_88px_1fr] sm:grid-cols-[1fr_108px_1fr] gap-3 p-5 sm:p-7">
-
-              {/* Project */}
-              <div className="rounded-2xl p-5 text-left"
-                style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-4"
-                  style={{ color: "rgba(96,165,250,0.4)" }}>Votre projet</p>
-
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(37,99,235,0.35), rgba(236,72,153,0.2))",
-                      border: "1px solid rgba(59,130,246,0.25)",
-                    }}>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="rgba(96,165,250,0.85)" strokeWidth="1.5">
-                      <path d="M8 1L15 5V11L8 15L1 11V5L8 1Z" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold leading-none mb-1" style={{ color: "rgba(255,255,255,0.82)" }}>FinTech AI</p>
-                    <p className="text-[11px]" style={{ color: "rgba(96,165,250,0.4)" }}>Early Stage · B2B SaaS</p>
-                  </div>
-                </div>
-
-                {[
-                  { k: "Secteur", v: "Finance · IA" },
-                  { k: "Stade",   v: "Idée validée" },
-                  { k: "Besoin",  v: "MVP complet" },
-                ].map(row => (
-                  <div key={row.k} className="flex items-center justify-between mb-2">
-                    <span className="text-[11px]" style={{ color: "rgba(96,165,250,0.3)" }}>{row.k}</span>
-                    <span className="text-[11px] font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>{row.v}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Match */}
-              <div className="flex flex-col items-center justify-center gap-3">
-                <svg width="76" height="76" viewBox="0 0 80 80" className="overflow-visible">
-                  <defs>
-                    <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"   stopColor="#3b82f6"/>
-                      <stop offset="100%" stopColor="#ec4899"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(59,130,246,0.12)" strokeWidth="4"/>
-                  <circle cx="40" cy="40" r="36" fill="none" stroke="url(#ag)" strokeWidth="4.5"
-                    strokeLinecap="round"
-                    strokeDasharray={`${0.97 * ARC} ${ARC}`}
-                    transform="rotate(-90 40 40)"
-                    style={{ filter: "drop-shadow(0 0 8px rgba(236,72,153,0.5))" }}/>
-                  <text x="40" y="36" textAnchor="middle" fill="white" fontSize="14" fontWeight="800" fontFamily="inherit">97%</text>
-                  <text x="40" y="50" textAnchor="middle" fill="rgba(244,114,182,0.4)" fontSize="8" fontFamily="inherit">match</text>
+/* ── Mockup 2 : Projets disponibles ────────────────────────────── */
+function ProjetsMockup() {
+  return (
+    <div className="rounded-3xl overflow-hidden h-full flex flex-col"
+      style={{ background: "#fff", border: "1px solid rgba(15,23,42,0.09)", boxShadow: "0 4px 6px rgba(15,23,42,0.04), 0 24px 80px rgba(15,23,42,0.10)" }}>
+      <div className="h-[2px]" style={{ background: "linear-gradient(90deg,#3b82f6,#ec4899,#8b5cf6)" }}/>
+      <AppNav active="Projets"/>
+      <div className="p-5 flex flex-col gap-4 flex-1">
+        {/* Header */}
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-slate-900 font-bold text-sm">Projets disponibles</p>
+            <p className="text-[12px] text-slate-400 mt-0.5">3 matchs pour ton profil · Dev Full-Stack</p>
+          </div>
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold rounded-full px-3 py-1.5"
+            style={{ background: "rgba(236,72,153,0.07)", color: "#ec4899", border: "1px solid rgba(236,72,153,0.15)" }}>
+            <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#ec4899" }}/>
+            En ligne
+          </div>
+        </div>
+        {/* Filters */}
+        <div className="flex gap-2 flex-wrap">
+          {[{ l:"Tous",t:true},{l:"Tech"},{l:"Finance"},{l:"Santé"},{l:"Impact"}].map((f) => (
+            <span key={f.l} className="text-[11px] font-semibold px-3 py-1 rounded-full"
+              style={{
+                background: f.t ? "linear-gradient(135deg,#be185d,#ec4899)" : "rgba(15,23,42,0.05)",
+                color: f.t ? "#fff" : "#94a3b8",
+                border: f.t ? "none" : "1px solid rgba(15,23,42,0.07)",
+              }}>{f.l}</span>
+          ))}
+        </div>
+        {/* Featured card */}
+        <div className="rounded-2xl p-4 relative overflow-hidden"
+          style={{ background: "linear-gradient(135deg,rgba(236,72,153,0.04),rgba(37,99,235,0.03))", border: "1.5px solid rgba(236,72,153,0.2)" }}>
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg,rgba(37,99,235,0.15),rgba(236,72,153,0.12))", border: "1px solid rgba(236,72,153,0.2)" }}>
+                <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="#ec4899" strokeWidth="1.5">
+                  <path d="M7.5 1L14 4.5V10L7.5 14L1 10V4.5L7.5 1Z" strokeLinejoin="round"/>
                 </svg>
-                <div className="flex items-center gap-1.5">
-                  <div className="h-px w-8 bg-gradient-to-r from-transparent to-pink-400/30"/>
-                  <div className="w-1.5 h-1.5 rounded-full bg-pink-400/40"/>
-                  <div className="h-px w-8 bg-gradient-to-l from-transparent to-pink-400/30"/>
-                </div>
               </div>
+              <div>
+                <p className="text-slate-900 font-bold text-sm">FinTech AI</p>
+                <p className="text-[11px] text-slate-400">Finance · B2B SaaS · Early Stage</p>
+              </div>
+            </div>
+            <div className="rounded-full px-2.5 py-1" style={{ background: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.2)" }}>
+              <span className="text-[11px] font-black" style={{ color: "#ec4899" }}>94% match</span>
+            </div>
+          </div>
+          <div className="flex gap-2 mb-3">
+            {["Full-Stack Dev","Product Manager"].map((t) => (
+              <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-full"
+                style={{ background: "rgba(37,99,235,0.07)", color: "#2563eb", border: "1px solid rgba(37,99,235,0.15)" }}>{t}</span>
+            ))}
+          </div>
+          <button className="w-full py-2.5 rounded-xl text-[12px] font-bold text-white flex items-center justify-center gap-1.5"
+            style={{ background: "linear-gradient(135deg,#be185d,#ec4899)" }}>
+            Rejoindre ce projet
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M2 5.5h7M5.5 2l3.5 3.5L5.5 9" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        {/* Secondary cards */}
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { name:"EcoTrack",   domain:"Écologie · B2C", need:"Dev Full-Stack", match:87, icon:"🌿", c:"#2563eb" },
+            { name:"MedConnect", domain:"Santé · B2B",    need:"Dev Backend",    match:79, icon:"🏥", c:"#7c3aed" },
+          ].map((p) => (
+            <div key={p.name} className="rounded-xl p-3.5" style={{ background:"#f8f9fb", border:"1px solid rgba(15,23,42,0.07)" }}>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-base">{p.icon}</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                  style={{ background:`${p.c}0f`, color:p.c }}>{p.match}%</span>
+              </div>
+              <p className="text-slate-900 font-bold text-[12px] mb-0.5">{p.name}</p>
+              <p className="text-slate-400 text-[10px] mb-1.5">{p.domain}</p>
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: p.c }}/>
+                <span className="text-[10px] font-medium" style={{ color: p.c }}>{p.need}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
-              {/* Team */}
-              <div className="rounded-2xl p-5 text-left"
-                style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-4"
-                  style={{ color: "rgba(96,165,250,0.4)" }}>Équipe matchée</p>
-
-                {[
-                  { role: "Full-Stack Dev",  school: "Polytechnique", c: "#2563eb" },
-                  { role: "Product Manager", school: "HEC Paris",      c: "#ec4899" },
-                  { role: "Designer UX/UI",  school: "Sciences Po",    c: "#7c3aed" },
-                ].map(m => (
-                  <div key={m.role} className="flex items-center gap-3 mb-3 last:mb-0">
-                    <div className="w-8 h-8 rounded-xl shrink-0 flex items-center justify-center"
-                      style={{
-                        background: `linear-gradient(135deg, ${m.c}40, ${m.c}20)`,
-                        border: `1px solid ${m.c}35`,
-                      }}>
-                      <div className="w-3 h-3 rounded-full" style={{ background: `${m.c}70` }}/>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-semibold truncate" style={{ color: "rgba(255,255,255,0.75)" }}>{m.role}</p>
-                      <p className="text-[10px] truncate" style={{ color: "rgba(96,165,250,0.38)" }}>{m.school}</p>
-                    </div>
-                    <div className="w-2 h-2 rounded-full shrink-0"
-                      style={{ background: "rgba(74,222,128,0.75)" }}/>
-                  </div>
+/* ── Mockup 3 : Messagerie ──────────────────────────────────────── */
+function MessagerieMockup() {
+  const convos = [
+    { name:"Équipe FinTech AI", last:"Dev: L'API est stable 🎉", time:"14:32", unread:3, c:"#ec4899" },
+    { name:"Julien M. (Mentor)", last:"RDV confirmé vendredi 14h", time:"hier", unread:0, c:"#7c3aed" },
+    { name:"Thomas R.",         last:"PR ouverte pour review",     time:"hier", unread:1, c:"#2563eb" },
+  ];
+  return (
+    <div className="rounded-3xl overflow-hidden h-full flex flex-col"
+      style={{ background:"#fff", border:"1px solid rgba(15,23,42,0.09)", boxShadow:"0 4px 6px rgba(15,23,42,0.04), 0 24px 80px rgba(15,23,42,0.10)" }}>
+      <div className="h-[2px]" style={{ background:"linear-gradient(90deg,#3b82f6,#ec4899,#8b5cf6)" }}/>
+      <AppNav active="Messages"/>
+      <div className="flex flex-1 min-h-0">
+        {/* Sidebar */}
+        <div className="w-[44%] flex flex-col border-r" style={{ borderColor:"rgba(15,23,42,0.07)" }}>
+          <div className="px-3 py-3 border-b" style={{ borderColor:"rgba(15,23,42,0.07)" }}>
+            <p className="text-slate-900 font-bold text-sm">Messages</p>
+          </div>
+          {convos.map((c, i) => (
+            <div key={c.name} className="flex items-start gap-2.5 px-3 py-3 cursor-pointer transition-colors"
+              style={{ background: i === 0 ? "rgba(236,72,153,0.05)" : "transparent", borderBottom:"1px solid rgba(15,23,42,0.05)" }}>
+              <div className="w-8 h-8 rounded-xl shrink-0 flex items-center justify-center font-bold text-xs text-white"
+                style={{ background:`linear-gradient(135deg,${c.c},${c.c}bb)` }}>
+                {c.name[0]}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-0.5">
+                  <p className="text-[11px] font-semibold text-slate-900 truncate">{c.name}</p>
+                  <span className="text-[10px] text-slate-400 shrink-0 ml-1">{c.time}</span>
+                </div>
+                <p className="text-[10px] text-slate-400 truncate">{c.last}</p>
+              </div>
+              {c.unread > 0 && (
+                <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center shrink-0 mt-0.5"
+                  style={{ background:"#ec4899" }}>{c.unread}</span>
+              )}
+            </div>
+          ))}
+        </div>
+        {/* Thread */}
+        <div className="flex-1 flex flex-col">
+          <div className="flex items-center gap-2 px-3 py-3 border-b" style={{ borderColor:"rgba(15,23,42,0.07)" }}>
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-[11px] text-white"
+              style={{ background:"linear-gradient(135deg,#2563eb,#7c3aed)" }}>T</div>
+            <div>
+              <p className="text-[11px] font-semibold text-slate-900">Thomas R.</p>
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400"/>
+                <span className="text-[9px] text-slate-400">En ligne</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 p-3 flex flex-col gap-2.5 overflow-hidden">
+            {/* Their message */}
+            <div className="flex gap-2">
+              <div className="w-6 h-6 rounded-lg shrink-0 flex items-center justify-center text-[10px] font-bold text-white"
+                style={{ background:"linear-gradient(135deg,#2563eb,#7c3aed)" }}>T</div>
+              <div className="rounded-2xl rounded-tl-md px-3 py-2.5 max-w-[80%]"
+                style={{ background:"#f1f5f9" }}>
+                <p className="text-[11px] text-slate-700 leading-relaxed">
+                  J&apos;ai terminé l&apos;auth, tout est sur <span className="font-mono text-[10px] px-1 rounded" style={{ background:"rgba(37,99,235,0.1)", color:"#2563eb" }}>feature/auth</span>. Tu peux review ? 🙏
+                </p>
+              </div>
+            </div>
+            {/* Reply */}
+            <div className="flex justify-end">
+              <div className="rounded-2xl rounded-tr-md px-3 py-2.5 max-w-[80%]"
+                style={{ background:"linear-gradient(135deg,rgba(236,72,153,0.12),rgba(190,24,93,0.08))", border:"1px solid rgba(236,72,153,0.15)" }}>
+                <p className="text-[11px] leading-relaxed" style={{ color:"#be185d" }}>
+                  Parfait 🔥 Je review demain matin.
+                </p>
+              </div>
+            </div>
+            {/* Typing indicator */}
+            <div className="flex items-center gap-2 mt-auto">
+              <div className="w-6 h-6 rounded-lg flex items-center justify-center text-[10px] font-bold text-white shrink-0"
+                style={{ background:"linear-gradient(135deg,#2563eb,#7c3aed)" }}>T</div>
+              <div className="flex items-center gap-1 rounded-2xl px-3 py-2" style={{ background:"#f1f5f9" }}>
+                {[0,1,2].map((i) => (
+                  <div key={i} className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background:"#94a3b8", animationDelay:`${i*0.15}s` }}/>
                 ))}
               </div>
             </div>
+          </div>
+          {/* Input */}
+          <div className="px-3 pb-3">
+            <div className="flex items-center gap-2 rounded-xl px-3 py-2.5"
+              style={{ background:"#f8f9fb", border:"1px solid rgba(15,23,42,0.08)" }}>
+              <span className="text-[11px] text-slate-400 flex-1">Écrire un message…</span>
+              <div className="w-6 h-6 rounded-lg flex items-center justify-center"
+                style={{ background:"linear-gradient(135deg,#be185d,#ec4899)" }}>
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="white" strokeWidth="2">
+                  <path d="M2 5.5h7M5.5 2l3.5 3.5L5.5 9" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-            {/* Bottom status */}
-            <div className="mx-5 sm:mx-7 mb-6 sm:mb-7 flex items-center justify-between rounded-xl px-5 py-3"
-              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.045)" }}>
-              <div className="flex items-center gap-5">
-                {["Dispo confirmée", "Compétences validées", "Match approuvé"].map(s => (
-                  <div key={s} className="hidden sm:flex items-center gap-1.5">
-                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="rgba(74,222,128,0.75)" strokeWidth="1.8">
-                      <path d="M1.5 5.5l2.5 2.5L9.5 2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <span className="text-[11px]" style={{ color: "rgba(74,222,128,0.5)" }}>{s}</span>
+/* ── Schools data ───────────────────────────────────────────────── */
+const schools = [
+  "Polytechnique","HEC Paris","CentraleSupélec","ESSEC",
+  "Sciences Po","Mines ParisTech","Télécom Paris","EDHEC",
+];
+
+/* ── Stack positions ────────────────────────────────────────────── */
+const STACK = [
+  { z: 30, tx: 0,   ty: 0,  rot: 0,   sc: 1,    op: 1    }, // front
+  { z: 20, tx: 14,  ty: 14, rot: 2,   sc: 0.96, op: 1    }, // middle
+  { z: 10, tx: 28,  ty: 28, rot: 3.5, sc: 0.92, op: 0.85 }, // back
+];
+
+const MOCKUPS = [<AccueilMockup key="a"/>, <ProjetsMockup key="p"/>, <MessagerieMockup key="m"/>];
+const LABELS  = ["Accueil", "Projets", "Messages"];
+
+/* ── Hero ───────────────────────────────────────────────────────── */
+export default function Hero() {
+  const [offset, setOffset] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cycle = useCallback(() => { setOffset((o) => (o + 1) % 3); }, []);
+
+  const resetTimer = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(cycle, 4000);
+  }, [cycle]);
+
+  useEffect(() => {
+    resetTimer();
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [offset, resetTimer]);
+
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+
+      {/* Blue aurora */}
+      <div className="absolute pointer-events-none animate-aurora"
+        style={{ top:"-20%", left:"-12%", width:"700px", height:"700px", borderRadius:"50%",
+          background:"radial-gradient(ellipse,rgba(37,99,235,0.09) 0%,transparent 65%)", filter:"blur(80px)" }}/>
+      {/* Pink aurora */}
+      <div className="absolute pointer-events-none animate-aurora-r"
+        style={{ bottom:"-15%", right:"-10%", width:"700px", height:"700px", borderRadius:"50%",
+          background:"radial-gradient(ellipse,rgba(236,72,153,0.08) 0%,transparent 65%)", filter:"blur(70px)" }}/>
+      {/* Grid */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:`linear-gradient(rgba(15,23,42,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,0.022) 1px,transparent 1px)`,
+          backgroundSize:"72px 72px",
+          maskImage:"radial-gradient(ellipse 80% 70% at 30% 50%,rgba(0,0,0,0.5) 0%,transparent 70%)",
+        }}/>
+
+      {/* ── Layout ── */}
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 pt-28 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+
+        {/* LEFT */}
+        <div className="flex flex-col items-start text-left">
+
+          <div className="opacity-0-init animate-fade-up delay-100 inline-flex items-center gap-3 rounded-full px-5 py-2.5 mb-8"
+            style={{ background:"#fdf4f8", border:"1px solid rgba(236,72,153,0.2)" }}>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background:"#ec4899" }}/>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background:"#ec4899" }}/>
+            </span>
+            <span className="text-slate-600 text-sm font-medium">Bêta privée · 100 premières places</span>
+          </div>
+
+          <h1 className="opacity-0-init animate-fade-up delay-200 font-bold tracking-[-0.035em] leading-[0.95] mb-5">
+            <span className="block text-[clamp(44px,6vw,84px)] text-slate-900">Ton idée mérite</span>
+            <span className="block text-[clamp(44px,6vw,84px)] text-gradient-vivid">une vraie équipe.</span>
+            <span className="block text-[clamp(26px,3.5vw,48px)] font-semibold mt-3 text-slate-400">pas juste un freelance.</span>
+          </h1>
+
+          <p className="opacity-0-init animate-fade-up delay-300 text-slate-500 text-lg leading-relaxed mb-10 max-w-md">
+            Soumets ton projet, reçois une équipe complète sélectionnée sur dossier et lance ton MVP en 4 à 8 semaines.
+          </p>
+
+          <div className="opacity-0-init animate-fade-up delay-400 flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
+            <a href="#whitelist" className="btn-pink inline-flex items-center gap-3 text-white font-semibold text-[15px] px-9 rounded-2xl"
+              style={{ paddingTop:"17px", paddingBottom:"17px" }}>
+              Accéder à la bêta
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M3 7.5h9M8 3.5l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <a href="#how-it-works" className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-semibold transition-colors duration-200">
+              Comment ça marche
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M3 6.5h7M7 3.5l3 3-3 3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div className="opacity-0-init animate-fade-up delay-500 flex items-center gap-0 mb-10">
+            {[
+              { val:"4–8", unit:"sem.",    sub:"idée → MVP" },
+              { val:"0€",  unit:"bêta",   sub:"gratuit an 1" },
+              { val:"100%",unit:"dossier",sub:"sélection" },
+            ].map((s,i) => (
+              <div key={i} className="flex items-center">
+                <div className="flex flex-col pr-6">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-2xl font-black text-slate-900 tracking-tight">{s.val}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color:"#be185d" }}>{s.unit}</span>
                   </div>
+                  <span className="text-[11px] text-slate-400">{s.sub}</span>
+                </div>
+                {i < 2 && <div className="w-px h-8 mr-6 shrink-0" style={{ background:"rgba(15,23,42,0.08)" }}/>}
+              </div>
+            ))}
+          </div>
+
+          <div className="opacity-0-init animate-fade-up delay-600">
+            <p className="text-slate-400 text-[10px] font-semibold uppercase tracking-[0.2em] mb-3">Équipes issues de</p>
+            <div className="relative overflow-hidden" style={{ maxWidth:420 }}>
+              <div className="absolute left-0 top-0 bottom-0 w-4 z-10 pointer-events-none" style={{ background:"linear-gradient(to right,white,transparent)" }}/>
+              <div className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none" style={{ background:"linear-gradient(to left,white,transparent)" }}/>
+              <div className="flex whitespace-nowrap" style={{ animation:"marquee 18s linear infinite", willChange:"transform", width:"max-content" }}>
+                {[...schools,...schools].map((s,i) => (
+                  <span key={i} className="inline-flex items-center gap-3 mr-5">
+                    <span className="text-slate-400 text-[12px] font-medium">{s}</span>
+                    <span className="text-slate-200 text-xs">·</span>
+                  </span>
                 ))}
               </div>
-              <span className="text-[11px] font-mono" style={{ color: "rgba(244,114,182,0.35)" }}>Démarrage · 48h</span>
             </div>
           </div>
         </div>
 
-        {/* Schools trust marquee */}
-        <div className="opacity-0-init animate-fade-up delay-1000 mt-16 w-full max-w-4xl mx-auto">
-          <p className="text-slate-400 text-xs font-medium uppercase tracking-[0.2em] text-center mb-6">
-            Équipes issues des meilleures écoles
-          </p>
-          <div className="relative overflow-hidden">
-            {/* Fade masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
-              style={{ background: "linear-gradient(to right, white, transparent)" }}/>
-            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
-              style={{ background: "linear-gradient(to left, white, transparent)" }}/>
+        {/* RIGHT — Stacked cards */}
+        <div className="opacity-0-init animate-fade-up delay-300 flex flex-col items-center lg:items-end gap-5">
 
-            {/* Scrolling track */}
-            <div className="flex whitespace-nowrap" style={{ width: "max-content", animation: "marquee 22s linear infinite", willChange: "transform" }}>
-              {[
-                { name: "École Polytechnique",  style: { fontWeight: 700, letterSpacing: "-0.02em" } },
-                { name: "HEC Paris",             style: { fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase" as const } },
-                { name: "CentraleSupélec",       style: { fontWeight: 600, letterSpacing: "-0.01em" } },
-                { name: "ESSEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
-                { name: "Sciences Po",           style: { fontWeight: 500, fontStyle: "italic" } },
-                { name: "ESCP",                  style: { fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase" as const } },
-                { name: "Mines ParisTech",       style: { fontWeight: 600 } },
-                { name: "Télécom Paris",         style: { fontWeight: 700, letterSpacing: "-0.01em" } },
-                { name: "Arts et Métiers",       style: { fontWeight: 600 } },
-                { name: "EM Lyon",               style: { fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" as const } },
-                { name: "INSA Lyon",             style: { fontWeight: 700, letterSpacing: "0.04em" } },
-                { name: "EDHEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
-                /* duplicate for seamless loop */
-                { name: "École Polytechnique",  style: { fontWeight: 700, letterSpacing: "-0.02em" } },
-                { name: "HEC Paris",             style: { fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase" as const } },
-                { name: "CentraleSupélec",       style: { fontWeight: 600, letterSpacing: "-0.01em" } },
-                { name: "ESSEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
-                { name: "Sciences Po",           style: { fontWeight: 500, fontStyle: "italic" } },
-                { name: "ESCP",                  style: { fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase" as const } },
-                { name: "Mines ParisTech",       style: { fontWeight: 600 } },
-                { name: "Télécom Paris",         style: { fontWeight: 700, letterSpacing: "-0.01em" } },
-                { name: "Arts et Métiers",       style: { fontWeight: 600 } },
-                { name: "EM Lyon",               style: { fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase" as const } },
-                { name: "INSA Lyon",             style: { fontWeight: 700, letterSpacing: "0.04em" } },
-                { name: "EDHEC",                 style: { fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" as const } },
-              ].map((school, i) => (
-                <span key={i} className="inline-flex items-center mx-8 gap-8">
-                  <span className="text-slate-400 text-[15px]" style={school.style}>
-                    {school.name}
-                  </span>
-                  <span className="text-slate-200 text-lg">·</span>
-                </span>
-              ))}
+          {/* Stack container */}
+          <div className="relative w-full max-w-[500px]" style={{ height: 520 }}>
+            {MOCKUPS.map((mockup, idx) => {
+              const pos   = (idx - offset + 3) % 3;
+              const s     = STACK[pos];
+              const isFront = pos === 0;
+              return (
+                <div key={idx}
+                  onClick={isFront ? () => { cycle(); } : undefined}
+                  style={{
+                    position:   "absolute",
+                    inset:       0,
+                    zIndex:      s.z,
+                    opacity:     s.op,
+                    transform:  `translateX(${s.tx}px) translateY(${s.ty}px) rotate(${s.rot}deg) scale(${s.sc})`,
+                    transition:  "all 0.55s cubic-bezier(0.16,1,0.3,1)",
+                    cursor:      isFront ? "pointer" : "default",
+                    transformOrigin: "bottom center",
+                  }}>
+                  {mockup}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Dots indicator + hint */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-2">
+              {MOCKUPS.map((_, idx) => {
+                const isFront = (idx - offset + 3) % 3 === 0;
+                return (
+                  <button key={idx} onClick={() => { setOffset((3 - idx) % 3); resetTimer(); }}
+                    className="rounded-full transition-all duration-300"
+                    style={{
+                      width:  isFront ? 20 : 8,
+                      height: 8,
+                      background: isFront ? "linear-gradient(90deg,#be185d,#ec4899)" : "rgba(15,23,42,0.12)",
+                    }}/>
+                );
+              })}
+            </div>
+            <div className="flex items-center gap-2 text-slate-400 text-[11px]">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M2 4.5l4.5 4 4.5-4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6.5 1v7" strokeLinecap="round"/>
+              </svg>
+              <span>Cliquer pour explorer · <span className="font-semibold text-slate-600">{LABELS[(offset) % 3]}</span></span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, #ffffff)" }}/>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background:"linear-gradient(to bottom,transparent,#ffffff)" }}/>
     </section>
   );
 }

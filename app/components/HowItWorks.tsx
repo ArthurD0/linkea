@@ -139,6 +139,39 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
+
+        {/* Mid-page CTA */}
+        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl px-8 py-7"
+          style={{
+            background: "rgba(255,255,255,0.7)",
+            border: "1px solid rgba(236,72,153,0.15)",
+            backdropFilter: "blur(12px)",
+            boxShadow: "0 2px 12px rgba(236,72,153,0.07), 0 8px 32px rgba(15,23,42,0.05)",
+          }}>
+          <div>
+            <p className="text-slate-900 font-bold text-lg tracking-[-0.02em] mb-1">
+              Le process est clair. Tu es prêt ?
+            </p>
+            <p className="text-slate-500 text-sm">
+              Rejoins les 100 premiers membres · Gratuit en bêta · Sélection sur dossier
+            </p>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <a href="/pourquoi-nous" className="text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors duration-200 flex items-center gap-1.5">
+              Pourquoi nous
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path d="M2 6.5h9M7 3l3.5 3.5L7 10" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <a href="#whitelist" className="btn-pink inline-flex items-center gap-2 text-sm px-6 py-3 rounded-xl">
+              Accéder à la bêta
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M2 6.5h9M7 3l3.5 3.5L7 10" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <div className="divider absolute bottom-0 left-0 right-0" style={{ background: "rgba(236,72,153,0.1)" }}/>

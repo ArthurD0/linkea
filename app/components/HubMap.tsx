@@ -73,7 +73,20 @@ export default function HubMap() {
         </div>
 
         {/* Map */}
-        <div className="rounded-3xl overflow-hidden mx-auto" style={{ maxWidth: 1100 }}>
+        <div className="relative mx-auto" style={{ maxWidth: 1100 }}>
+
+          {/* Mascotte longue vue */}
+          <div className="absolute bottom-0 right-0 z-20 pointer-events-none select-none"
+            style={{ transform: "translate(20px, 50px)" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/mascot/linkeo_longuevue-sans fond.png"
+              alt="Mascotte Linkea"
+              style={{ width: 220, height: "auto", filter: "drop-shadow(0 8px 24px rgba(15,23,42,0.15))" }}
+            />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden">
           <ComposableMap
             projection="geoMercator"
             projectionConfig={{ scale: 140, center: [5, 22] }}
@@ -152,6 +165,7 @@ export default function HubMap() {
               );
             })}
           </ComposableMap>
+          </div>
         </div>
 
         <p className="text-center text-slate-400 text-sm mt-6">
