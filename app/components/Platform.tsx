@@ -319,7 +319,7 @@ function SprintMockup() {
           { txt: "Authentification livrée et déployée",  ok: true  },
           { txt: "Feedback UX intégré sur le dashboard", ok: true  },
           { txt: "Bug API /users corrigé en prod",       ok: true  },
-          { txt: "Optimisation mobile — Sprint 4",       ok: false },
+          { txt: "Optimisation mobile. Sprint 4",       ok: false },
         ].map((item) => (
           <div key={item.txt} className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 bg-white" style={{ border: D }}>
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
@@ -446,7 +446,7 @@ function BadgeMockup() {
 
 /* ── Data ────────────────────────────────────────────────────────── */
 const platformFeatures = [
-  { n: "01", label: "Dépôt de projet",           detail: "< 5 min",    desc: "Interface web guidée pour soumettre ton idée. Secteur, besoin, stade — on t'amène jusqu'au submit sans friction.",                           mockup: <DepotMockup />    },
+  { n: "01", label: "Dépôt de projet",           detail: "< 5 min",    desc: "Interface web guidée pour soumettre ton idée. Secteur, besoin, stade : on t'amène jusqu'au submit sans friction.",                           mockup: <DepotMockup />    },
   { n: "02", label: "Algorithme de matching",     detail: "Sous 72h",   desc: "Notre algorithme analyse ton projet et sélectionne les profils les plus complémentaires dans le réseau Linkea.",                             mockup: <MatchingMockup /> },
   { n: "03", label: "Espace projet collaboratif", detail: "Tout-en-un", desc: "Roadmap, sprints, livrables et messagerie intégrée. Toute la vie de ton projet dans un seul espace structuré.",                              mockup: <EspaceMockup />   },
   { n: "04", label: "Dashboard de supervision",   detail: "Temps réel", desc: "Suivi de l'avancement, alertes de jalons et reporting automatique. Tu vois où en est ton MVP à chaque instant.",                            mockup: <DashboardMockup />},
@@ -455,7 +455,7 @@ const platformFeatures = [
 const accompagnementFeatures = [
   { n: "01", label: "Onboarding & cadrage MVP",          detail: "Semaine 1",     desc: "Atelier de cadrage pour définir précisément le scope de ton MVP. L'équipe et le porteur sont alignés dès le départ.",           mockup: <OnboardingMockup />},
   { n: "02", label: "Sprints hebdomadaires supervisés",   detail: "Chaque semaine",desc: "Check-ins structurés avec compte-rendu à chaque sprint. Un mentor valide les livrables et ajuste la trajectoire.",               mockup: <SprintMockup />   },
-  { n: "03", label: "Réseau de mentors praticiens",       detail: "À la demande",  desc: "Entrepreneurs, PMs et dev seniors disponibles ponctuellement. Un accès direct à l'expérience — pas à des slides.",               mockup: <MentorsMockup />  },
+  { n: "03", label: "Réseau de mentors praticiens",       detail: "À la demande",  desc: "Entrepreneurs, PMs et dev seniors disponibles ponctuellement. Un accès direct à l'expérience, pas à des slides.",               mockup: <MentorsMockup />  },
   { n: "04", label: "Certification d'expérience",         detail: "À la livraison",desc: "Badge Linkea attestant la participation à un projet réel. Valorisable sur CV et LinkedIn pour chaque membre.",                   mockup: <BadgeMockup />    },
 ];
 

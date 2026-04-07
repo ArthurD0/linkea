@@ -21,7 +21,7 @@ export default function Solution() {
             <span className="text-gradient-pink-blue">On structure l&apos;exécution.</span>
           </h2>
           <p className="body-copy text-lg max-w-lg mx-auto">
-            Linkea n&apos;est pas un outil — c&apos;est un système complet
+            Linkea n&apos;est pas un outil, c&apos;est un système complet
             pour passer de l&apos;idée au produit.
           </p>
         </div> {/* end header */}
@@ -53,7 +53,7 @@ export default function Solution() {
             <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Équipes complètes dans un cadre supervisé</h3>
             <p className="body-copy text-sm max-w-sm mb-6">
               Chaque équipe est sélectionnée sur dossier et intégrée dans un cadre supervisé.
-              Dev, PM et designer — motivés comme des co-fondateurs, pas comme des prestataires.
+              Dev, PM et designer, motivés comme des co-fondateurs, pas comme des prestataires.
             </p>
 
             {/* Team preview */}
@@ -91,7 +91,7 @@ export default function Solution() {
             <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Sprints structurés, livraisons réelles</h3>
             <p className="body-copy text-sm mb-6">
               Roadmap claire, sprints hebdomadaires, livrables mesurables à chaque itération.
-              Du kick-off au premier utilisateur — sans dérapage.
+              Du kick-off au premier utilisateur, sans dérapage.
             </p>
 
             <div className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3.5 py-1.5"
@@ -118,7 +118,7 @@ export default function Solution() {
 
             <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-[-0.02em]">Mentors praticiens, pas des professeurs</h3>
             <p className="body-copy text-sm mb-6">
-              Founders, PMs et investisseurs qui ont lancé des produits. Un accès direct au terrain — pas à des slides de cours.
+              Founders, PMs et investisseurs qui ont lancé des produits. Un accès direct au terrain, pas à des slides de cours.
             </p>
 
             <div className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3.5 py-1.5"

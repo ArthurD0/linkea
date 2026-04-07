@@ -14,7 +14,7 @@ export default function KeyBenefits() {
           </h2>
           <p className="body-copy text-lg max-w-xl mx-auto">
             Linkea combine sélection rigoureuse, exécution structurée et mentoring terrain
-            pour transformer une idée en produit — en quelques semaines.
+            pour transformer une idée en produit en quelques semaines.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function KeyBenefits() {
             </div>
             <div>
               <p className="text-slate-900 font-semibold text-sm leading-snug">
-                MVP fonctionnel livré en <span style={{ color: "#ec4899" }}>4 à 8 semaines</span> — du premier sprint au produit live
+                MVP fonctionnel livré en <span style={{ color: "#ec4899" }}>4 à 8 semaines</span>, du premier sprint au produit live
               </p>
             </div>
           </div>

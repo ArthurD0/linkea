@@ -1,5 +1,5 @@
 const rows = [
-  { aspect: "Équipe",          others: "Individus isolés, non vérifiés",    linkea: "Trio complet — dev, PM, design" },
+  { aspect: "Équipe",          others: "Individus isolés, non vérifiés",    linkea: "Trio complet : dev, PM, design" },
   { aspect: "Cadre",           others: "Aucune méthode intégrée",           linkea: "Sprints supervisés + roadmap structurée" },
   { aspect: "Accompagnement",  others: "Livraison et c'est tout",           linkea: "Mentors praticiens à chaque sprint" },
   { aspect: "Mindset",         others: "Prestataire de service",            linkea: "Co-fondateurs motivés par ton succès" },
@@ -24,7 +24,7 @@ export default function Differentiation() {
           </h2>
           <p className="body-copy text-lg max-w-xl mx-auto">
             Linkea n&apos;est pas Malt, CoFoundersLab ou LinkedIn.
-            C&apos;est un système complet d&apos;exécution — de l&apos;idée au MVP live.
+            C&apos;est un système complet d&apos;exécution, de l&apos;idée au MVP live.
           </p>
         </div>
 

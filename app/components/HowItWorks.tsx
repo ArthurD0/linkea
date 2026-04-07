@@ -4,7 +4,7 @@ const steps = [
   {
     n: "01",
     title: "Soumets ton idée",
-    body: "Décris ton projet en quelques lignes : secteur, problème à résoudre, stade d'avancement. Moins de 5 minutes — une vision suffit.",
+    body: "Décris ton projet en quelques lignes : secteur, problème à résoudre, stade d'avancement. Moins de 5 minutes, une vision suffit.",
     detail: "< 5 minutes",
     color: "#ec4899",
     bg: "rgba(236,72,153,0.08)",
@@ -18,7 +18,7 @@ const steps = [
   {
     n: "02",
     title: "On te matche avec une équipe",
-    body: "On analyse ton projet et sélectionne une équipe complémentaire sur dossier. Dev, PM, designer — trio validé, pas des profils anonymes.",
+    body: "On analyse ton projet et sélectionne une équipe complémentaire sur dossier. Dev, PM, designer : trio validé, pas des profils anonymes.",
     detail: "Sous 72h",
     color: "#7c3aed",
     bg: "rgba(124,58,237,0.08)",
