@@ -308,7 +308,7 @@ export default function PourquoiNous() {
                 {/* Linkea header */}
                 <div className="flex flex-col items-center gap-1.5">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/favicon.png" alt="Linkea" style={{ width: 36, height: 36, objectFit: "contain" }} />
+                  <img src="/favicon-sansfond.png" alt="Linkea" style={{ width: 36, height: 36, objectFit: "contain" }} />
                   <span className="text-[10px] font-bold" style={{ color: "#be185d" }}>Linkea</span>
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function PourquoiNous() {
               {/* Logo row */}
               <div className="flex items-center justify-center gap-3 mb-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/favicon.png" alt="Linkea" style={{ width: 44, height: 44, objectFit: "contain" }} />
+                <img src="/favicon-sansfond.png" alt="Linkea" style={{ width: 44, height: 44, objectFit: "contain" }} />
                 <span className="text-slate-400 font-medium text-sm">vs</span>
                 <div className="flex items-center -space-x-1">
                   {competitors.map((c) => (
@@ -390,7 +390,7 @@ export default function PourquoiNous() {
                     style={{ background: "radial-gradient(ellipse, rgba(236,72,153,0.08) 0%, transparent 70%)" }}/>
                   <div className="flex items-center gap-3 mb-6 relative z-10">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/favicon.png" alt="Linkea" style={{ width: 36, height: 36, objectFit: "contain" }} />
+                    <img src="/favicon-sansfond.png" alt="Linkea" style={{ width: 36, height: 36, objectFit: "contain" }} />
                     <span className="font-bold text-base text-slate-900">Linkea</span>
                   </div>
                   <ul className="space-y-3 relative z-10">

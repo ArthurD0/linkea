@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Linkea" style={{ height: 40, width: "auto", objectFit: "contain" }} />
+              <img src="/logo-sansfond.png" alt="Linkea" style={{ height: 40, width: "auto", objectFit: "contain" }} />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
               Connecte ton projet avec une équipe étudiante d&apos;élite et transforme ton idée en produit — en quelques semaines.

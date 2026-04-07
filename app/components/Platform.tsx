@@ -408,7 +408,7 @@ function BadgeMockup() {
             boxShadow: "0 0 0 8px rgba(236,72,153,0.07), 0 0 40px rgba(236,72,153,0.15)",
           }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/favicon.png" alt="Badge" style={{ width: 52, height: 52, objectFit: "contain" }}/>
+          <img src="/favicon-sansfond.png" alt="Badge" style={{ width: 52, height: 52, objectFit: "contain" }}/>
         </div>
       </div>
       <div className="text-center">

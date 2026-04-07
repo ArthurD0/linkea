@@ -9,7 +9,7 @@ function AppNav({ active }: { active: string }) {
       style={{ background: "#f8f9fa", borderBottom: "1px solid rgba(15,23,42,0.07)" }}>
       <div className="flex items-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.png" alt="Linkea" style={{ height: 20, width: "auto", objectFit: "contain" }}/>
+        <img src="/logo-sansfond.png" alt="Linkea" style={{ height: 20, width: "auto", objectFit: "contain" }}/>
       </div>
       <div className="hidden sm:flex items-center gap-5">
         {["Accueil", "Projets", "Messages", "Sprints"].map((l) => (

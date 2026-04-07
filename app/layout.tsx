@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   description:
     "Linkea connecte développeurs, profils business et mentors pour construire des startups rapidement. De l'idée au MVP en quelques semaines.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon-sansfond.png",
+    shortcut: "/favicon-sansfond.png",
+    apple: "/favicon-sansfond.png",
   },
 };
 

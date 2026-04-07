@@ -33,7 +33,7 @@ export default function Navbar() {
             {/* Logo complet */}
             <a href="/" className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Linkea" style={{ height: 36, width: "auto", objectFit: "contain" }} />
+              <img src="/logo-sansfond.png" alt="Linkea" style={{ height: 36, width: "auto", objectFit: "contain" }} />
             </a>
 
             {/* Nav links */}
@@ -90,7 +90,7 @@ export default function Navbar() {
           {/* Favicon seul */}
           <a href="/" className="shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Linkea" style={{ height: 28, width: "auto", objectFit: "contain" }} />
+            <img src="/logo-sansfond.png" alt="Linkea" style={{ height: 28, width: "auto", objectFit: "contain" }} />
           </a>
 
           {/* Separator */}
