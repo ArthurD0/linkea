@@ -5,6 +5,7 @@ import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
 import Platform from "./components/Platform";
 import HubMap from "./components/HubMap";
+import Team from "./components/Team";
 import Whitelist from "./components/Whitelist";
 import Footer from "./components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <HowItWorks />
         <Platform />
         <HubMap />
+        <Team />
         <Whitelist />
       </main>
       <Footer />

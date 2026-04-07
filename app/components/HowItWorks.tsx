@@ -63,7 +63,6 @@ export default function HowItWorks() {
 
         {/* Header */}
         <div className="relative text-center mb-20">
-          <p className="section-label-pink mb-5">Process</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             De l&apos;idée au produit
             <br/>

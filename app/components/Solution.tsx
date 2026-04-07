@@ -15,7 +15,6 @@ export default function Solution() {
             <img src="/mascot/linkeo_salut.png" alt=""
               style={{ width: 190, height: "auto", filter: "drop-shadow(0 8px 20px rgba(15,23,42,0.12))" }}/>
           </div>
-          <p className="section-label-pink mb-5">La solution</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             On construit les équipes.
             <br/>

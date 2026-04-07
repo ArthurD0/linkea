@@ -54,7 +54,6 @@ export default function Problem() {
         {/* Header */}
         <div className="flex items-center mb-20 gap-4">
           <div className="max-w-xl">
-            <p className="section-label mb-5">Le problème</p>
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.95] mb-6">
               Lancer une startup,
               <br/>

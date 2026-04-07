@@ -43,7 +43,6 @@ export default function HubMap() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <p className="section-label-pink mb-5">Réseau mondial</p>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-900 tracking-[-0.03em] leading-[0.97] mb-6">
             Nos hubs étudiants
             <br/>
