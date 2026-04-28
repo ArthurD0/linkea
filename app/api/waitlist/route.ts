@@ -1,15 +1,18 @@
 import { supabase } from "@/lib/supabase";
 
 export async function POST(request: Request) {
-  const { email } = await request.json();
+  const { email, role } = await request.json();
 
   if (!email || !email.includes("@")) {
     return Response.json({ error: "Email invalide" }, { status: 400 });
   }
+  if (role !== "founder" && role !== "developer") {
+    return Response.json({ error: "Rôle invalide" }, { status: 400 });
+  }
 
   const { error } = await supabase
     .from("waitlist")
-    .insert({ email });
+    .insert({ email, role });
 
   if (error) {
     if (error.code === "23505") {

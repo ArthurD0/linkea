@@ -7,6 +7,7 @@ const TAKEN = 47;
 
 export default function Whitelist() {
   const [email, setEmail]     = useState("");
+  const [role, setRole]       = useState<"founder" | "developer">("founder");
   const [done, setDone]       = useState(false);
   const [active, setActive]   = useState(false);
   const [error, setError]     = useState("");
@@ -27,7 +28,7 @@ export default function Whitelist() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, role }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -123,6 +124,28 @@ export default function Whitelist() {
         {/* Form / success */}
         {!done ? (
           <form onSubmit={submit} className="mb-8">
+            {/* Role toggle */}
+            <div className="inline-flex rounded-xl p-1 mb-4"
+              style={{ background: "rgba(255,255,255,0.7)", border: "1px solid rgba(236,72,153,0.15)" }}>
+              {(["founder", "developer"] as const).map((r) => (
+                <button
+                  key={r}
+                  type="button"
+                  onClick={() => setRole(r)}
+                  className="px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={role === r ? {
+                    background: "linear-gradient(135deg, #ec4899, #be185d)",
+                    color: "#fff",
+                    boxShadow: "0 2px 8px rgba(236,72,153,0.3)",
+                  } : {
+                    color: "#64748b",
+                  }}
+                >
+                  {r === "founder" ? "Founder" : "Développeur"}
+                </button>
+              ))}
+            </div>
+
             <div className="relative mb-3">
               <div className="relative flex items-center rounded-2xl overflow-hidden"
                 style={{
